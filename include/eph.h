@@ -16,7 +16,7 @@
 
 #define	_EPH_DEF_
 
-#define		VERSION			"1.4.8"
+#define		VERSION			"1.4.9a4"
 #define		CREDIT			"EPH Ver1.4 Kent/Gokuh/wasat"
 
 #define		ENV_EPH			"EPH"		/* Environment Value */
@@ -134,6 +134,8 @@ typedef struct	_Current {
 	char	w_orb_mpla[ FN_LEN ];		/* Work Orb. elem. : mpla   */
 	char	w_eph_file[ FN_LEN ];		/* Work output : Ephemeris  */
 	char	w_id_file[ FN_LEN ];		/* Work output : Ident.	 */
+	char	deltaT_table[ FN_LEN ];		/* TT-UTC (deltaT) Table */
+	char	mpc2eph_file[ FN_LEN ];		/* mpx2eph list file */
 	/* -----  Location of observatory  ----- */
 	double	longitude;
 	double	latitude;
@@ -324,6 +326,8 @@ typedef struct _Comment {			/* from Orbital element file */
 		"mpla.dat",			/* Work Orbital elem. : mpla	*/
 		"$eph_out.eph",			/* work file : Ephemeris	*/
 		"$id_out.eph",			/* work file : Identification	*/
+		"deltaT.tab",			/* TT-UTC (deltaT) table	*/
+		"mpc2eph.lst",			/* mpc orbital elem. url list	*/
 	/* -----  Location of observatory  ----- */
 		DEG2RAD( 135.0 ),		/* E135.0ß			*/
 		DEG2RAD( 35.0 ),		/* N+35.0ß			*/

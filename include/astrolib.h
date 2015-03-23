@@ -140,6 +140,7 @@ extern int	day2time( double, int *, int *, int * );
 extern double	gst_date( double );
 extern double	lst_date( double );
 extern double	ut2et( double );
+extern double	et2ut( double );
 extern double	time_convert( double );
 
 /* ***  general  *** */

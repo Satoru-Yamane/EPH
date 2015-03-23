@@ -63,7 +63,7 @@ double	jd;		/* input */
 
 
 /*
- *	day2time ---
+ *	time2day ---
  *		convert int day,hour,minute,sec*100 to double day
  */
 double
@@ -93,7 +93,9 @@ int	*h,	*m,	*cs;
 	double	w,	ival;
 
 
+/*
 	d += 1.0e-8;
+*/
 	w = modf( d, &ival ) * 24.0;		ret = (int)ival;
 	w = modf( w, &ival ) * 60.0;		*h = (int)ival;
 	w = modf( w, &ival ) * 60.0;		*m = (int)ival;
@@ -130,7 +132,9 @@ Time	tm;		/* input */
 	} else if ( tm.year < 0 ) {
 		jd -= 1.0;
 	}
+/*
 	jd -= 1.0e-8;
+*/
 
 	return ( jd );
  }
@@ -282,109 +286,69 @@ ut2et_init()
 
 	int	lines;
 	static char	buf[256];
-	char	*ev, *token, *brk;
+	char	*ev, *brk, str_St_y[5], str_St_m[3], str_St_d[3], str_dT[9];
 	int	fld_no;
 	double	w_jd;
 	int	w_dt;
 	int	any_error = 0;
+        double	jd, dT;
+        Time	st_date;
 
-	for (i = 0; ENV_VAL[i] != NULL; i++) {
-		memset(fname, 0, FN_LEN);
-		if ((ev = getenv(ENV_VAL[i])) != NULL) {
-			if (strlen(ev) < FN_LEN - strlen(UT2ET_TBL) - strlen(PATHDELIM)) {
-				strcpy(fname, ev);
-#if defined(_WIN32)
-				if (i == 1) {	/* concat HOMEDRIVE+HOME */
-					i++;
-					if ((ev = getenv(ENV_VAL[i])) != NULL) {
-		                                if (strlen(ev) < FN_LEN - strlen(UT2ET_TBL) - strlen(PATHDELIM) - 2) {
-							strcat(fname, ev);
-						}
-					}
-				}
-#endif
-				strcat(fname, PATHDELIM);
-				strcat(fname, UT2ET_TBL);
-				if ((fp = fopen(fname, "r")) != NULL)
-					break;
-			}
-		}
-	}
-	if (fp == NULL) {
-		fp = fopen(UT2ET_TBL, "r");
-	}
+  fp = fopen(current.deltaT_table, "r");
+  
+  if(fp == NULL) {
+    return (E_FOPEN);	/* FATAL error */
+    }
+  
+  if(d_et != NULL) {		/* in case called again */
+    free(d_et);
+    d_et = NULL;
+    n_d_et = 0;
+    }
 
-	if (fp == NULL) {
-#if 0
-		fprintf(stderr, "ut2et_init(): Cannot open '%s'\n", fname);
-		sleep(2);
-#endif
-		return (E_FOPEN);	/* FATAL error */
-	}
+/*
+ * parse line
+ */
+    for(lines = 0; ! feof(fp) && ! any_error; lines++) {
+      if(fgets(buf, sizeof(buf), fp) == NULL) break;
+    
+      if(*buf == '#'		/* comment */
+    	  || *buf == '\r'
+    	  || *buf == '\n'
+    	  || strlen(buf) == 0) {
+    	continue;
+        }
 
-	if (d_et != NULL) {	/* in case called again */
-		free(d_et);
-		d_et = NULL;
-		n_d_et = 0;
-	}
-	/*
-	 * parse line
-	 */
-	for (lines = 0; ! feof(fp) && ! any_error; lines++) {
-		if (fgets(buf, sizeof(buf), fp) == NULL)
-			break;
+      strncpy(str_St_y, buf,    4);
+      strncpy(str_St_m, buf+5,  2);
+      strncpy(str_St_d, buf+8,  2);
+      strncpy(str_dT,   buf+11, 8);
+      st_date.year = atoi(str_St_y);
+      st_date.mon  = atoi(str_St_m);
+      st_date.day  = atoi(str_St_d);
+      st_date.hour = st_date.min = st_date.csec = 0;
+      dT = atof(str_dT);
 
-		if (*buf == '#'		/* comment */
-		 || *buf == '\r'
-		 || *buf == '\n'
-		 || strlen(buf) == 0) {
-			continue;
-		}
-		for (token = strtok_r(buf, "\t \r\n", &brk), fld_no = 0;
-		     token;
-		     token = strtok_r(NULL, "\t \r\n", &brk), fld_no++) {
-			switch(fld_no) {
-			case 0:
-				str2val(token, VAL_DOUBLE, &w_jd);
-				break;
-			case 1:
-				str2val(token, VAL_INTEGER, &w_dt);
-				break;
-			default:	/* skip */
-				break;
-			}
-		}
-		if (fld_no < 2) {
-			fprintf(stderr, "ut2et_init(): format error in line %d.(buf='%s').\n", lines + 1, buf);
-			any_error++;
-		} else if (w_jd < 2415020.5 || w_jd > 2500000.0) {
-			fprintf(stderr, "ut2et_init(): Bad JD value in line %d.(JD=%9.1lf).\n", lines + 1, w_jd);
-			any_error++;
-		} else if (w_dt < -1000 || w_dt > 2000) {
-			fprintf(stderr, "ut2et_init(): Bad dT value in line %d.(dT=%d).\n", lines + 1, w_dt);
-			any_error++;
-		} else {
-			d_et = (ut2et_tbl *)realloc(d_et, (n_d_et + 1) * sizeof(ut2et_tbl));
-			if (d_et == NULL) {
-				any_error++;
-			} else {
-				d_et[n_d_et].jd = w_jd;
-				d_et[n_d_et].dt = w_dt;
-				n_d_et++;
-#if 0
-				fprintf(stderr, "d_et[%d].jd=%lf / ", n_d_et, w_jd);
-				fprintf(stderr, "d_et[%d].dt=%d\n", n_d_et, w_dt);
-#endif
-			}
-		}
-	}
-	fclose(fp);
-#if 0
-	fprintf(stderr, "ut2et_init(): read %d lines / %d.\n", lines, any_error);
-#endif
+/*
+      w_jd = day2jd(st_date) + 0.00000001;
+      w_dt = (dT * 1000000) / 3600 / 24 + 0.4;
+*/
+      w_jd = day2jd(st_date);
+      w_dt = (dT * 1000000) / 86400;
 
-	return ((any_error) ? E_INIT_UT2ET : 0);
-}
+      d_et = (ut2et_tbl *)realloc(d_et, (n_d_et + 1) * sizeof(ut2et_tbl));
+      if(d_et == NULL) {
+        any_error++;
+        } else {
+        d_et[n_d_et].jd = w_jd;
+        d_et[n_d_et].dt = w_dt;
+        n_d_et++;
+        }
+      }
+    fclose(fp);
+  
+    return ((any_error) ? E_INIT_UT2ET : 0);
+  }
 
 double
 ut2et(jd)
@@ -393,7 +357,21 @@ double	jd;		/* input */
 	register int	n;
 
 	for (n = 0; n < n_d_et; n++) {
-		if (jd > d_et[n].jd)
+		if (jd + 1.0e-8 >= d_et[n].jd)
+			return ((double)(d_et[n].dt) * 1.0e-6);
+	}
+
+	return (0.0);	/* unknown value */
+}
+
+double
+et2ut(jde)
+double	jde;		/* input */
+{
+	register int	n;
+
+	for (n = 0; n < n_d_et; n++) {
+		if (jde + 1.0e-8 >= d_et[n].jd + (d_et[n].dt) * 1.0e-6)
 			return ((double)(d_et[n].dt) * 1.0e-6);
 	}
 
@@ -405,7 +383,7 @@ double
 time_convert( jd_in )
 double	jd_in;
 {
-	double	jd_out;
+	double	jd_out, w_et2ut;
 
 	jd_out = jd_in;
 
@@ -414,7 +392,11 @@ double	jd_in;
 			jd_out = UT2JST( jd_out );
 			/* No break */
 		case UT_IN:
-			jd_out -= ( ctrl_sw.ut2et_sw ? current.ut_et : ut2et(jd_out) );
+			w_et2ut = et2ut(jd_out);
+			if(w_et2ut == 0) {
+				w_et2ut = current.ut_et;
+				}
+			jd_out -= ( ctrl_sw.ut2et_sw ? current.ut_et : w_et2ut );
 			/* No break */
 		case ET_IN:	case TT_IN:
 			break;

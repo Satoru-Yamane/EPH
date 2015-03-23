@@ -1,5 +1,4 @@
 Ver. 1.4.3 以降の変更履歴
-
 ※印は旧バージョンとの互換性がなくなった変更。
 
 Ver. 1.4.3a1
@@ -105,7 +104,7 @@ Ver. 1.4.7p1
   Windows 版で、最新の libcurl(7.24.0)に対応させるように makefile を修正。
 
 Ver. 1.4.8a1
-  ハードコードされていた TT と UT の差($TT-UT$) を外部ファイル(ut2et_tbl.dat)
+  ハードコードされていた TT と UT の差(TT-UT) を外部ファイル(ut2et_tbl.dat)
   に持つように変更。
 
 Ver. 1.4.8a2
@@ -116,3 +115,16 @@ ver.1.4.8 = Ver. 1.4.8a3
   mpc2eph.lst の改行コードを LF+CR にも対応。
   ut2et_tbl.dat の値で異常値をエラーとするように変更。
   ドキュメントに ut2et_tbl.dat の記述を追加。
+
+ver.1.4.9a1
+  日付入力画面(Edit Date Range等)で、日付が狂う、また正しいTT-UTCの値が
+    適用されないバグを修正。
+  TT-UTC (deltaT) Table(ut2et_tbl.dat)、MPC Orbit URL List(mpc2eph.lst) の
+    ファイル名を環境設定ファイルに持ち、"System control" で設定できるように
+    変更。    
+※TT-UTC (deltaT) Table のデフォルトを ut2et_tbl.dat から deltaT.tab に
+    変更し、ユリウス日、TT-UTC(日)の指定から UTC、TT-UTC(秒)の指定に変更。
+  deltaT.tab、mpc2eph.lst の内容を Filer メニューから、編集をできるように
+    変更。
+  Import MPC Orbit、Edit TT-UTC Table、Edit MPC Orbit URL の各入力画面で
+    入力時、項目の桁数分の入力をした場合、自動的に次項目に移るように変更。

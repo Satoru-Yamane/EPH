@@ -6,6 +6,7 @@
 #       Mar.  6, 2011    M.Nishiyama
 #       Sept.10, 2011
 #       Feb. 22, 2012
+#       June 18, 2012
 #
 # *********************************************************
 
@@ -18,7 +19,7 @@ DEBUG_FLAG	= DEBUG=1
 !endif
 
 !ifdef USE_CURL
-CURL_FLAG	= USE_CURL=1 CURL_DIR=..\curl-7.24.0
+CURL_FLAG	= USE_CURL=1 CURL_DIR=..\curl-7.26.0
 !endif
 
 all:

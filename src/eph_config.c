@@ -33,6 +33,8 @@ static Config config[] = {
 	{ "files.w_orb_mpla",	VAL_STRING,	&current.w_orb_mpla,	"%s",	},
 	{ "files.w_eph_file",	VAL_STRING,	&current.w_eph_file,	"%s",	},
 	{ "files.w_id_file",	VAL_STRING,	&current.w_id_file,	"%s",	},
+	{ "files.deltaT_table",	VAL_STRING,	&current.deltaT_table,	"%s",	},
+	{ "files.mpc2eph_file",	VAL_STRING,	&current.mpc2eph_file,	"%s",	},
 	/* =====  Ctrl_sw  =====*/
 	/* -----  total control   ----- */
 	{ "system.fix_elem",	VAL_INTEGER,	&ctrl_sw.fix_elem,	"%d",	},

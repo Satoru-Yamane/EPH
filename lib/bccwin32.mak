@@ -10,14 +10,14 @@
 SUBDIR	= astro misc termio
 
 !ifdef DEBUG
-DEBUG_FLAGS	=	-DDEBUG
+DEBUG_CFLAGS    = -DDEBUG
 !endif
 
 !ifdef USE_CURL
 CURL_FLAGS	= -DUSE_CURL -DCURL_DIR=$(CURL_DIR)
 !endif
 
-MAKEFLAGS	= $(DEBUG_FLAGS) $(CURL_FLAGS)
+MAKEFLAGS	= $(DEBUG_CFLAGS) $(CURL_FLAGS)
 
 all:
 	cd astro

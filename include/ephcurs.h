@@ -82,7 +82,8 @@ extern int eph_term_init(void);
 extern int eph_term_deinit(void);
 extern void frame_box(int, int, int, int);
 extern int EPH_getstr(int, int, char *, int);
-extern void EPH_getnum(int, int, char *, int);
+extern int EPH_getnum(int, int, char *, int);
+extern int EPH_getdecimal(int, int, char *, int);
 extern int EPH_getkey(void);
 
 /* defined eph_more.c */

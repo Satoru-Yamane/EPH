@@ -67,6 +67,9 @@ extern MenuFunc	scan_file( Filer_cmd * );
 
 extern MenuFunc	file_sel();
 
+extern MenuFunc	edit_ttutc();
+extern MenuFunc	edit_mpcurl();
+
 /* defined output.c */
 extern int orb_el_out(Orbit_element *, Comment *, FILE *);
 extern int header1(FILE *);

@@ -1,10 +1,10 @@
-INSTALL                    EPH ver1.4.7
+INSTALL                    EPH Ver.1.4.9
 
-　このアーカイブには EPH ver1.4.7 の C ソースコードおよび Makefile と
+　このアーカイブには EPH Ver.1.4.9 の C ソースコードおよび Makefile と
 ドキュメントが入っています。
 
   Windows での Make にはPublic Domain Curses(pdcurs34.zip) が必要です。
- 下記 URL よりダウンロードし、eph-147-src\pdcurses に解凍して下さい。
+ 下記 URL よりダウンロードし、eph-1.4.9\pdcurses に解凍して下さい。
     (cygwin では、ncurses をインストールしてください。)
 
     http://sourceforge.net/projects/pdcurses/files/pdcurses/3.4/pdcurs34.zip/download
@@ -12,10 +12,10 @@ INSTALL                    EPH ver1.4.7
   MPC の軌道要素ファイルのダウンロードに libfetch か curl を使用します。
   libfetch を持たない環境では下記 URL より curl を入手し、インストールを
   行って下さい。
-  このドキュメント執筆時の最新版は 7.24.0です。
+  このドキュメント執筆時の最新版は 7.26.0です。
 
-     http://curl.haxx.se/download/curl-7.24.0.tar.bz2
-     http://curl.haxx.se/download/curl-7.24.0.zip
+     http://curl.haxx.se/download/curl-7.26.0.tar.bz2
+     http://curl.haxx.se/download/curl-7.26.0.zip
 
 
   Make は以下のようにして下さい。
@@ -24,7 +24,7 @@ INSTALL                    EPH ver1.4.7
 
 * Windows
 
-    curl-7.24.0.zip を展開し、展開したディレクトリで make を実行します。
+    curl-7.26.0.zip を展開し、展開したディレクトリで make を実行します。
 
     eph のアーカイブを展開します。
 
@@ -33,7 +33,7 @@ INSTALL                    EPH ver1.4.7
 
     make はeph 本体のベースディレクトリで make コマンドを実行してください。
   eph 本体のベースディレクトリ にある 各 Makefile を修正し、curl のディレ
-  クトリ設定(CURL_DIR)を上記 curl-7.24.0.zip を展開したディレクトリへの
+  クトリ設定(CURL_DIR)を上記 curl-7.26.0.zip を展開したディレクトリへの
   相対パスで指定してください。
   libcurl - MPCの軌道要素ダウンロード機能 を有効にするには make のオプション
   で USE_CURL を指定してください。
@@ -46,16 +46,16 @@ INSTALL                    EPH ver1.4.7
         Visual Studio Tools を実行しコマンドプロンプトから標準添付の
       nmake.exe を使用します。
 
-            curl-7.24.0.zip を展開する。
-            cd curl-7.24.0
+            curl-7.26.0.zip を展開する。
+            cd curl-7.26.0
             nmake vc VC=vc10 RTLIBCFG=static
               VC  は Visual studio のバージョンで以下
                 VC=vc10  Visual studio 2010
                 VC=vc9   Visual studio 2008
                 VC=vc8   Visual studio 2005
                 VC=vc6   VC6
-            eph-147-src.zip を展開する。
-            cd eph-147-src\pdcurses
+            eph-149-src.zip を展開する。
+            cd eph-149-src\pdcurses
             pdcurs34.zip を展開する。
             cd win32
             nmake /F vcwin32.mak
@@ -69,11 +69,11 @@ INSTALL                    EPH ver1.4.7
         asyn-thread.obj の追加に失敗しています。eph 側の makefile でこれら
         を直接 link しています。
 
-            curl-7.24.0.zip を展開する。
-            cd curl-7.24.0
+            curl-7.26.0.zip を展開する。
+            cd curl-7.26.0
             make borland RTLIBCFG=static
-            eph-147-src.zip を展開する。
-            cd eph-147-src\pdcurses
+            eph-149-src.zip を展開する。
+            cd eph-149-src\pdcurses
             pdcurs34.zip を展開する。
             cd win32
             make -f bccwin32.mak
@@ -84,11 +84,11 @@ INSTALL                    EPH ver1.4.7
     * MinGW
         　GNU Make を使用します。
 
-            curl-7.24.0.zip を展開する。
-            cd curl-7.24.0
+            curl-7.26.0.zip を展開する。
+            cd curl-7.26.0
             make mingw32 RTLIBCFG=static
-            eph-147-src.zip を展開する。
-            cd eph-147-src\pdcurses
+            eph-149-src.zip を展開する。
+            cd eph-149-src\pdcurses
             pdcurs34.zip を展開する。
             cd win32
             make -f mingwin32.mak
@@ -100,14 +100,15 @@ INSTALL                    EPH ver1.4.7
         　GNU Make を使用します。事前に ncurses をインストールしてください。
           Cygwin 対応は、Windows 対応に際して中間的なものとして対応させたものです。
           エミュレータということで実行速度も遅くなり、メリットはありません。
-          以上により、今後サポートの予定はありません。
+          以上により、現在サポート対象外となっています。
+          必要な場合、mingwin32.mak を参考に cygwin.mak の修正を行ってください。
 
-            unzip curl-7.24.0.zip
-            cd curl-7.24.0
+            unzip curl-7.26.0.zip
+            cd curl-7.26.0
             make cygwin
             make install
-            unzip eph-147-src.zip
-            cd eph-147-src
+            unzip eph-149-src.zip
+            cd eph-149-src
             make USE_CURL=1 -f cygwin.mak
 
     * その他
@@ -119,7 +120,7 @@ INSTALL                    EPH ver1.4.7
         gmake USE_FETCH=1; gmake install
 
     * Linux
-      libcurl を インストールを導入後 gmake を実行してください。
+      libcurl を インストールを導入後 make を実行してください。
 
       libcurl は、ほとんどの distributionでパッケージがあるはずです。
       libfetch、libcurl どちらも持たない場合は GNUmakefile の USE_CURL を
@@ -138,4 +139,4 @@ INSTALL                    EPH ver1.4.7
 
 美しさに欠けるソースコードですが、何かのお役にたてば幸いです。
 
-                    Feb. 22, 2012    S.Yamane / K.Osada / M.Nishiyama
+                    June 23, 2012    S.Yamane / K.Osada / M.Nishiyama

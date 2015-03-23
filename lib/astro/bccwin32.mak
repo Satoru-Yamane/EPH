@@ -4,6 +4,7 @@
 #
 #       May.  7, 2011    M.Nishiyama
 #       Sept.11, 2011
+#       June 18, 2012
 #
 # *********************************************************
 
@@ -16,6 +17,7 @@ CC		= bcc32
 
 !ifdef DEBUG
 DEBUG_CFLAGS	= -DDEBUG -N -v -y -ff
+DEBUG_LDFLAGS	= -v
 !else
 DEBUG_CFLAGS	=  -O -ff
 !endif

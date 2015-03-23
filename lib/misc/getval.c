@@ -12,7 +12,7 @@
 #include	<stdio.h>
 #include	<math.h>
 #include	<ctype.h>
-#if defined(_WIN32)
+#if defined(_WIN32) || __FreeBSD__ || __linux__
 #	include	<string.h>
 #else
 #	include	<strings.h>
@@ -75,6 +75,8 @@ char	*str;
 int	vartype;
 void	*varptr;
 {
+	double w_ut2et;
+
 	if ( vartype == VAL_STRING ) {
 		strcpy( (char *)varptr, str );
 	} else {
@@ -120,13 +122,18 @@ void	*varptr;
 				jde = day2jd( tm );
 				switch ( ctrl_sw.time_system ) {
 				case JST_IN:
-						jde = JST2UT( jde );
-						/* No break */
+					jde = JST2UT( jde );
+					/* No break */
 				case UT_IN:
-						jde += ( ctrl_sw.ut2et_sw ? current.ut_et : ut2et(jde) );
-						/* No break */
+					w_ut2et = ut2et(jde);
+					if(w_ut2et == 0) {
+						jde += current.ut_et;
+						} else {
+						jde += ( ctrl_sw.ut2et_sw ? current.ut_et : w_ut2et );
+						}
+					/* No break */
 				case ET_IN:	case TT_IN:
-						break;
+					break;
 				}
 			
 				*(double *)varptr = jde;
@@ -181,7 +188,7 @@ void	*varptr;
 int valsprintf(char *buf, char *fmt, int val_type, void *valp)
 {
 	Time	T;
-	double	w;
+	double	w, w_et2ut;
 
 	w = *(double *)valp;
 	switch ( val_type ) {
@@ -205,7 +212,11 @@ int valsprintf(char *buf, char *fmt, int val_type, void *valp)
 	case VAL_LONG_JD:
 			if ( ctrl_sw.time_system != ET_IN
 			  && ctrl_sw.time_system != TT_IN )
-				w -= ( ctrl_sw.ut2et_sw ? current.ut_et : ut2et( w ) );
+				w_et2ut = et2ut( w );
+				if(w_et2ut == 0) {
+					w_et2ut = current.ut_et;
+					}
+				w -= ( ctrl_sw.ut2et_sw ? current.ut_et : w_et2ut );
 			if ( ctrl_sw.time_system == JST_IN )
 				w = UT2JST( w );
 			w = jd2day( w, &T );

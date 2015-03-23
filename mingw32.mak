@@ -6,6 +6,7 @@
 #       May. 11, 2011    M.Nishiyama
 #       Sept.10, 2011
 #       Feb. 22, 2012
+#       June 18, 2012
 #
 # *********************************************************
 
@@ -24,7 +25,7 @@ SUBDIR = lib src
 # USE_CURL	=	1
 
 ifeq ($(USE_CURL), 1)
-CURL_DIR	= ../curl-7.24.0
+CURL_DIR	= ../curl-7.26.0
 endif
 
 ifeq ($(DISABLE_COLOR), 1)

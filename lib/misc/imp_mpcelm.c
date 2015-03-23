@@ -345,17 +345,26 @@ char *Orb_Type, *MPC_File;
 /*
  *  Paramater Input
  */
+get_mpec_elem:
   c = EPH_getstr(4, 14, mpec_elem, 40);
   if(c == 0x1b) {
     underline_end();
     goto mpc2eph_end;
     }
+get_search_str:
   c = EPH_getstr(5, 14, search_str, 40);
   if(c == 0x1b) {
     underline_end();
     goto mpc2eph_end;
     }
-  EPH_getnum(6, 14, start_str, 10);
+  if(c == KEY_UP || c == KEY_BACKSPACE || c == KEY_LEFT) { goto get_mpec_elem; }
+get_start_str:
+  c = EPH_getnum(6, 14, start_str, 10);
+  if(c == 0x1b) {
+    underline_end();
+    goto mpc2eph_end;
+    }
+  if(c == KEY_UP || c == KEY_BACKSPACE || c == KEY_LEFT) { goto get_search_str; }
   mpc_start = strtol(start_str, NULL, 10);
   underline_end();
   mvprintw(6, 55, "start rec=%d", mpc_start);

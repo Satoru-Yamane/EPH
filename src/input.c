@@ -85,7 +85,10 @@ static int	after_eph_start( dmy )
 Field	*dmy;
 {
 	if ( ctrl_sw.ut2et_sw == 0 ) {		/* automatic UT->TT conversion */
+/*
 		current.ut_et = ut2et( current.start_jd );
+*/
+		current.ut_et = et2ut( current.start_jd );
 		putval( &date_var[0], 1 );		/* dim */
 	}
 	if ( ctrl_sw.eph_mode == 1 ) {		/* Single date mode */

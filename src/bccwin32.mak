@@ -4,6 +4,7 @@
 #
 #	May.  7, 2011	M.Nishiyama
 #	Sept.12, 2011
+#	June 18, 2012
 #
 # *********************************************************
 
@@ -17,6 +18,7 @@ CC		= bcc32
 
 !ifdef DEBUG
 DEBUG_CFLAGS	= -DDEBUG -N -v -y -ff
+DEBUG_LDFLAGS	= -v
 !else
 DEBUG_CFLAGS	=  -O -ff
 !endif
@@ -32,6 +34,8 @@ CURL_OBJS	=  ..\$(CURL_DIR)\lib\BCC_objs\asyn-ares.obj ..\$(CURL_DIR)\lib\BCC_ob
 CFLAGS		= $(INCLUDES) $(CURS_INC) $(CURL_INC) -DENABLE_COLOR -DUSE_REGEX $(CURL_CFLAGS) $(DEBUG_CFLAGS)
 
 LD		= ilink32
+
+LDFLAGS		= $(DEBUG_LDFLAGS)
 
 TARGET		= ..\bin\eph.exe
 

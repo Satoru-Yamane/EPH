@@ -993,6 +993,8 @@ static Menu	filer_menu[] = {
 	{ WAIT_KEY,	'P',	"Pack   Orbit file   ",	pack_file,	NULL  },
 #endif
 	{ WAIT_KEY,	'I',	"Import MPC Orbit    ",	file_sel,	NULL  },
+	{ WAIT_KEY,	'T',	"Edit TT-UTC Table   ",	edit_ttutc,	NULL  },
+	{ WAIT_KEY,	'M',	"Edit MPC Orbit URL  ",	edit_mpcurl,	NULL  },
 	{ WAIT_KEY,	'B',	"Back to Main Menu   ",	menu_upper,	NULL  },
 	{ NOT_EXEC,	'\0',	NULL,					NULL,			NULL  },
 } ;

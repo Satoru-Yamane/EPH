@@ -18,73 +18,42 @@
 #include "menu.h"
 #include "ephcurs.h"
 
-#define M2E_VER "0.94"
-#define M2E_List "mpc2eph.lst"
 #define M2E_HEDAER 4
 
 #ifdef USE_CURL
-FILE *fp_out;
+static FILE *fp_out;
 #endif
 
 /*
  *  Gloval variables
  */
 
-/*  Field M2E_ListDelimer of M2E_List  */
-const char *M2E_ListDelim = ";\r\n";
+/*  Field M2E_Delimer of current.mpc2eph_file  */
+static const char *M2E_Delim = ";\r\n";
 
-/*  M2E_List File pointer */
-FILE *fp_list;
+/*  current.mpc2eph_file File pointer */
+static FILE *fp_list;
 
-/* M2E_List handling variables */
-long Lsit_RecAdr[1024], List_MaxRec, List_CurrRec, List_PageTop, List_PageEnd;
-char proc_mark[1024];
-int List_BreakSW = 0, List_EofSW = 0, List_ExitSW= 0, List_QuitSW = 0;
-int List_LineCnt;
-
-/*
- *  Search and open M2E_List
- */
-int search_ListEnv(void)
-{
-  int i, c;
-  char env_path[1024], *env_var;
-  int env_sw = 0;
-
-  for(i = 0; ENV_VAL[i] != NULL && env_sw == 0; i++) {
-    memset(env_path, 0, 1024);
-    if((env_var = getenv(ENV_VAL[i])) != NULL) {
-      strcpy(env_path, env_var);
-#if defined(_WIN32)
-      if(i == 1) {
-	i++;
-        if((env_var = getenv(ENV_VAL[i])) != NULL) {
-	  strcat(env_path, env_var);
-	  }
-        }
-      strcat(env_path, "\\" M2E_List );
-#else
-      strcat(env_path, "/" M2E_List );
-#endif
-      if(fp_list = fopen(env_path, "rb")) { env_sw = 1; }
-      } 
-    } 
-
-  if(! env_sw) {
-    strcpy(env_path, M2E_List );
-    if(fp_list = fopen(env_path, "rb")) {
-      env_sw = 1;
-      } else {
-      return(9);
-      }
-    }
-  return(0);
-  }
+/* current.mpc2eph_file handling variables */
+static long List_RecAdr[1024], List_MaxRec, List_CurrRec, List_PageTop, List_PageEnd;
+static char proc_mark[1024];
+static int List_BreakSW = 0, List_EofSW = 0, List_ExitSW= 0, List_QuitSW = 0;
+static int List_LineCnt;
 
 /*
- *  Listup M2E_List
+ * function prototypes
  */
-int  List_m2elist(void)
+static int  List_m2elist(void);
+static int Lst_ScrHandler(void);
+static int fetch_mpc(char *);
+static size_t write_data(void *, size_t, size_t, void *);
+static int fetch_mpc(char *);
+static int disp_err(char *);
+
+/*
+ *  Listup current.mpc2eph_file
+ */
+static int  List_m2elist(void)
 {
   int i, rec_no;
   char List_RecBuf[1024];
@@ -93,27 +62,31 @@ int  List_m2elist(void)
   move(M2E_HEDAER, 0);
   clrtobot();
   List_LineCnt = List_ExitSW = 0;
-  fseek(fp_list,  Lsit_RecAdr[List_CurrRec], 0);
+  fseek(fp_list,  List_RecAdr[List_CurrRec], 0);
   while(! List_ExitSW) {
     if(fgets(List_RecBuf, 256, fp_list) != NULL) {
+      if(*List_RecBuf == '#') {
+        List_RecAdr[List_CurrRec + List_LineCnt] = ftell(fp_list);
+        continue;
+        }
       List_LineCnt++;
       rec_no++;
-      Lsit_RecAdr[List_CurrRec + List_LineCnt] = ftell(fp_list);
+      List_RecAdr[List_CurrRec + List_LineCnt] = ftell(fp_list);
       List_buf = strdup(List_RecBuf);
 #if defined(_WIN32)
-      List_type = strtok(List_buf, M2E_ListDelim);
-      List_url = strtok(NULL, M2E_ListDelim);
-      List_comment = strtok(NULL, M2E_ListDelim);
+      List_type = strtok(List_buf, M2E_Delim);
+      List_url = strtok(NULL, M2E_Delim);
+      List_comment = strtok(NULL, M2E_Delim);
 #else
-      List_type = strsep(&List_buf, M2E_ListDelim);
-      List_url = strsep(&List_buf, M2E_ListDelim);
-      List_comment = strsep(&List_buf, M2E_ListDelim);
+      List_type = strsep(&List_buf, M2E_Delim);
+      List_url = strsep(&List_buf, M2E_Delim);
+      List_comment = strsep(&List_buf, M2E_Delim);
 #endif
       for(i = strlen(List_url); i > 2; i--) {
         if(strncmp(List_url+i, "/", 1) == 0) { break; }
         }
 /*
-      printw("[ ] %-24s %-42s %5d\n", List_url+i+1, List_comment, Lsit_RecAdr[List_CurrRec+List_LineCnt-1]);
+      printw("[ ] %-24s %-42s %5d\n", List_url+i+1, List_comment, List_RecAdr[List_CurrRec+List_LineCnt-1]);
 */
       printw("[ ] %-24s %-42s\n", List_url+i+1, List_comment);
       } else {
@@ -129,7 +102,7 @@ int  List_m2elist(void)
 /*
  *  File Selecor Screen Handler 
  */
-int Lst_ScrHandler(void)
+static int Lst_ScrHandler(void)
 {
   int i, c, rec_no;
   char List_RecBuf[1024];
@@ -171,20 +144,25 @@ int Lst_ScrHandler(void)
         break;
       case 0x49:              /* I : IMPORT */
       case 0x69:              /* i : import */
-        fseek(fp_list, Lsit_RecAdr[List_CurrRec+List_LineCnt-1], 0);
-        if(fgets(List_RecBuf, 256, fp_list) != NULL) {
+        fseek(fp_list, List_RecAdr[List_CurrRec+List_LineCnt-1], 0);
+        while(fgets(List_RecBuf, 256, fp_list) != NULL) {
+          if(*List_RecBuf == '#') {
+            List_RecAdr[List_CurrRec+List_LineCnt-1] = ftell(fp_list);
+            continue;
+            }
           List_buf = strdup(List_RecBuf);
 #if defined(_WIN32)
-          List_type = strtok(List_buf, M2E_ListDelim);
-          List_url = strtok(NULL, M2E_ListDelim);
+          List_type = strtok(List_buf, M2E_Delim);
+          List_url = strtok(NULL, M2E_Delim);
 #else
-          List_type = strsep(&List_buf, M2E_ListDelim);
-          List_url = strsep(&List_buf, M2E_ListDelim);
+          List_type = strsep(&List_buf, M2E_Delim);
+          List_url = strsep(&List_buf, M2E_Delim);
 #endif
           for(i = strlen(List_url); i > 2; i--) {
             if(strncmp(List_url+i, "/", 1) == 0) { break; }
             }
 	  imp_mpcelm(List_type, List_url+i+1);
+          break;
           }
         List_ExitSW = 0;
         List_EofSW = 0;
@@ -193,17 +171,22 @@ int Lst_ScrHandler(void)
 #if defined(USE_FETCH) || defined(USE_CURL)
       case 0x44:              /* D : DOENLOAD */
       case 0x64:              /* d : download */
-        fseek(fp_list, Lsit_RecAdr[List_CurrRec+List_LineCnt-1], 0);
-        if(fgets(List_RecBuf, 256, fp_list) != NULL) {
+        fseek(fp_list, List_RecAdr[List_CurrRec+List_LineCnt-1], 0);
+        while(fgets(List_RecBuf, 256, fp_list) != NULL) {
+          if(*List_RecBuf == '#') {
+            List_RecAdr[List_CurrRec+List_LineCnt-1] = ftell(fp_list);
+            continue;
+            }
           List_buf = strdup(List_RecBuf);
 #if defined(_WIN32)
-          List_type = strtok(List_buf, M2E_ListDelim);
-          List_url = strtok(NULL, M2E_ListDelim);
+          List_type = strtok(List_buf, M2E_Delim);
+          List_url = strtok(NULL, M2E_Delim);
 #else
-          List_type = strsep(&List_buf, M2E_ListDelim);
-          List_url = strsep(&List_buf, M2E_ListDelim);
+          List_type = strsep(&List_buf, M2E_Delim);
+          List_url = strsep(&List_buf, M2E_Delim);
 #endif
           fetch_mpc(List_url);
+          break;
           }
         List_ExitSW = 0;
         List_EofSW = 0;
@@ -245,7 +228,7 @@ int Lst_ScrHandler(void)
 /*
  *  fetch_mpc - download mpc orbital element with libfetch
  */
-int fetch_mpc(URL)
+static int fetch_mpc(URL)
 char *URL;
 {
   struct url *mpc_url;
@@ -267,7 +250,7 @@ char *URL;
     mvprintw(11,15,"%s: parse error", eph_file);
     mvprintw(12,15,"  Press any key to continue.");
     getch();
-    return;
+    return(0);
     }
 
   if (fetchStat(mpc_url, &us, flags) == 0) {
@@ -280,7 +263,7 @@ char *URL;
     mvprintw(12,15,"  Press any key to continue.");
     free (mpc_url);
     getch();
-    return;
+    return(0);
     }
 
   mvprintw(11,15,"Download %s", eph_file);
@@ -307,7 +290,7 @@ char *URL;
  *  fetch_mpc - download mpc orbital element with libcurl
  */
 
-size_t write_data( void *buffer, size_t size, size_t nmemb, void *userp )
+static size_t write_data( void *buffer, size_t size, size_t nmemb, void *userp )
 {
   int segsize = size * nmemb;
 
@@ -316,7 +299,7 @@ size_t write_data( void *buffer, size_t size, size_t nmemb, void *userp )
   return segsize;
 }
 
-int fetch_mpc(char *URL)
+static int fetch_mpc(char *URL)
 {
   CURL *curl;
   CURLcode ret;
@@ -361,19 +344,9 @@ int fetch_mpc(char *URL)
 #endif
 
 /*
- *  Display Operation Guidance
- */
-int disp_guid(msg)
-char *msg;
-{
-  mvprintw(1,28,"%s", msg);
-  return(0);
-  }
-
-/*
  *  Display error message
  */
-int disp_err(char *msg)
+static int disp_err(char *msg)
 {
   frame_box(14, 10, 52, 4);
   mvprintw(11,15,"%s", msg);
@@ -382,6 +355,19 @@ int disp_err(char *msg)
   clear_bottom(14, 10);
   return(0);
   }
+
+/*
+ * capitalized guide message with bold face
+ */
+int capitalized_guide(int x, int y, char *msg)
+{
+
+  bold_start();
+  mvaddch(y, x, *msg);
+  bold_end();
+  mvprintw(y, x + 1, msg + 1);
+}
+
 
 /*
  * file_sel - MPC Orbital Element File Selector
@@ -393,14 +379,14 @@ MenuFunc file_sel()
   int i, c;
 
   clear_bottom(0, 2);
-  if(search_ListEnv()) {
-    sprintf(msg, "%s - Environment File not found!", M2E_List);
+  fp_list = fopen(current.mpc2eph_file, "rb");
+  if(fp_list == NULL) {
+    sprintf(msg, "%s - MPC Orbit URM List not found!", current.mpc2eph_file);
     disp_err(msg);
     return(9);
     }
 
-
-  Lsit_RecAdr[0] = ftell(fp_list);
+  List_RecAdr[0] = ftell(fp_list);
   List_CurrRec = List_PageTop = List_LineCnt = List_QuitSW = 0;
 
   while(!List_QuitSW) {
@@ -411,24 +397,13 @@ MenuFunc file_sel()
     underline_end();
     List_m2elist();
     mvprintw(1, 28, "Up/Down, ");
-    bold_start();
-    mvprintw(1, 37, "I");
-    bold_end();
-    mvprintw(1, 38, "mport, ");
+
+    capitalized_guide(37, 1, "Import, ");
 #if defined(USE_FETCH) || defined(USE_CURL)
-    bold_start();
-    mvprintw(1, 45, "D");
-    bold_end();
-    mvprintw(1, 46, "ownload, ESC/");
-    bold_start();
-    mvprintw(1, 59, "Q");
-    bold_end();
-    mvprintw(1, 60, "uit");
+    capitalized_guide(45, 1, "Download, ESC/");
+    capitalized_guide(59, 1, "Quit");
 #else
-    bold_start();
-    mvprintw(1, 45, "Q");
-    bold_end();
-    mvprintw(1, 46, "uit");
+    capitalized_guide(45, 1, "Quit");
 #endif
     clrtoeol();
     Lst_ScrHandler();
@@ -436,5 +411,8 @@ MenuFunc file_sel()
 
   fclose(fp_list);
   clear_bottom(0, 2);
+  top_bar(TB_EPH_SUB);
+  guidance(GUID_SUB);
+
   return(0);
   }

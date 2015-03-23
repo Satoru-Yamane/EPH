@@ -60,6 +60,8 @@ static Fname	fname[] = {
 
 	{ SYS_CTRL_X1,	SYS_CTRL_Y0+13,	current.w_eph_file,	0x0001	},
 	{ SYS_CTRL_X1,	SYS_CTRL_Y0+14,	current.w_id_file,	0x0001	},
+	{ SYS_CTRL_X1,	SYS_CTRL_Y0+15,	current.deltaT_table,	0x0000	},
+	{ SYS_CTRL_X1,	SYS_CTRL_Y0+16,	current.mpc2eph_file,	0x0000	},
 	{ -1,		-1,		NULL,			0	},
 } ;
 
@@ -87,6 +89,8 @@ static Menu	sys_con_menu[] = {
 
 	{ AUTOEXEC,	'\0',	"Work Eph. Out File      ",	get_fname,	&fname[ 4]  },
 	{ AUTOEXEC,	'\0',	"Work IdentOut File      ",	get_fname,	&fname[ 5]  },
+	{ AUTOEXEC,	'\0',	"TT-UTC (deltaT) Table   ",	get_fname,	&fname[ 6]  },
+	{ AUTOEXEC,	'\0',	"MPC Orbit URL List      ",	get_fname,	&fname[ 7]  },
 	{ WAIT_KEY,	'\0',	"Back to Main Menu       ",	menu_upper,	NULL },
 	{ NOT_EXEC,	'\0',	NULL,				NULL,		NULL },
 } ;
@@ -115,7 +119,7 @@ sys_control()
 	ClearScreen();
 	top_bar( TB_SYS_CTL_SUB );
 	guidance( GUID_YESNO );
-	frame_box(x-2, y-1, 72, 17);
+	frame_box(x-2, y-1, 72, 19);
 
 	for ( sp = sys_para; sp->sw_var != NULL; sp++ ) {
 		disp_val( sp );

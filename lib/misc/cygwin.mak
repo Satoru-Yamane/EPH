@@ -37,11 +37,11 @@ endif
 
 OBJS	= lib_out.o out_calc.o get_fn.o filer.o menu_man.o mid.o regex.o \
 		getval.o eph_select.o sel_dev.o time_sys.o fmt_gets.o s2v_v2s.o \
-		file_sel.o imp_mpcelm.o
+		file_sel.o imp_mpcelm.o edit_mpcurl.o edit_ttutc.o
 
 SRCS	= out_calc.c fmt_gets.c filer.c lib_out.c mid.c regex.c getval.c \
 		eph_select.c sel_dev.c menu_man.c time_sys.c get_fn.c s2v_v2s.c \
-		file_sel.c imp_mpcelm.c
+		file_sel.c imp_mpcelm.c edit_mpcurl.c edit_ttutc.c
 
 LIBRARY	= $(LIB_DIR)/libeph.a
 
@@ -77,6 +77,8 @@ get_fn.o : $(INC_DIR)/astrolib.h $(INC_DIR)/eph.h $(INC_DIR)/menu.h $(INC_DIR)/e
 s2v_v2s.o : $(INC_DIR)/astrolib.h $(INC_DIR)/eph.h
 file_sel.o : $(INC_DIR)/menu.h $(INC_DIR)/eph.h
 imp_mpcelm.o : $(INC_DIR)/menu.h $(INC_DIR)/eph.h
+edit_mpcurl.o: $(INC_DIR)/eph.h $(INC_DIR)/menu.h
+edit_ttutc.o: $(INC_DIR)/eph.h $(INC_DIR)/menu.h
 
 #
 #	End of Makefile

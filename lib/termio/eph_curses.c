@@ -483,7 +483,6 @@ int scroll_down( top, nlines )	/* Scroll Down */
   return(0);
 }
 
-
 /*
  *	eph_term_init ---
  *		initialize and setup terminal
@@ -635,12 +634,17 @@ char *str;
     } else {
     mvprintw(1, 0, "Overwrite mode              ");
     }
+  for(i = 0; i < str_size; i++) {
+/*
   for(i = 0; i <= str_size; i++) {
     if(i == str_size) { i--; }
+*/
     move(y, x + i);
     disp_cursor();
     c = getch();
     if(c == 0x0a || c == 0x09 || c == KEY_UP || c == KEY_DOWN || c == 0x1b) { break; }
+    if(i == 0 && (c == KEY_BACKSPACE || c == KEY_LEFT)) { break; }
+    if(i + 1 ==  in_leng && c == KEY_RIGHT) { break; }
     switch(c) {
       case KEY_RIGHT:
 	if(i >=  in_leng) { i--; }
@@ -650,6 +654,7 @@ char *str;
 	if(i > 0) { i -= 2; } else  { i--; }
 	break;
       case KEY_DC:
+      case 0x7f:			 /* 0x7f : Delete	*/
 	mvprintw(y, x + i , "%s", str + i + 1);
 	printw("%s", " ");
 	if(in_leng  - 1 > i) {
@@ -701,11 +706,11 @@ char *str;
 /*
  *  my_getnum - get number
  */
-void EPH_getnum(y, x, str, str_size)
+int EPH_getnum(y, x, str, str_size)
 int x, y, str_size;
 char *str;
 {
-  int i, j, c, in_leng, ins_sw=0;
+  int i, j, c, in_leng, ins_sw=0, sign_sw=0;
 
   in_leng = strlen(str);
   if(ins_sw) {
@@ -713,12 +718,17 @@ char *str;
     } else {
     mvprintw(1, 0, "Overwrite mode");
     }
+  for(i = 0; i < str_size; i++) {
+/*
   for(i = 0; i <= str_size; i++) {
     if(i == str_size) { i--; }
+ */
     move(y, x + i);
     disp_cursor();
     c = getch();
-    if(c ==  0x0a || c ==0x09 || c ==KEY_UP || c ==KEY_DOWN) { break; }
+    if(c == 0x0a || c ==0x09 || c ==0x1b || c ==KEY_UP || c ==KEY_DOWN) { break; }
+    if(i == 0 && (c == KEY_BACKSPACE || c == KEY_LEFT)) { break; }
+    if(i + 1 ==  in_leng && c == KEY_RIGHT) { break; }
     switch(c) {
       case KEY_RIGHT:
 	if(i >=  in_leng) { i--; }
@@ -728,6 +738,7 @@ char *str;
 	if(i > 0) { i -= 2; } else  { i--; }
 	break;
       case KEY_DC:
+      case 0x7f:			 /* 0x7f : Delete	*/
 	mvprintw(y, x + i , "%s", str + i + 1);
 	printw("%s", " ");
 	if(in_leng  - 1 > i) {
@@ -759,9 +770,117 @@ char *str;
       case KEY_DOWN:
 	break;
       default:
-	if(c < 0x30 || c > 0x39) {
+	if((c < 0x30 || c > 0x39)  && c != ' '){
 	  i--;
 	  break;
+	  }
+	if(ins_sw) {
+	  mvprintw(y, x + i + 1, "%s", str + i);
+	  for(j = in_leng; j >= i; j--) {
+	    str[j] = str[j-1];
+	    }
+	  }
+	if(c == ' ' && sign_sw){
+	  i--;
+	  break;
+	  }
+	if((c >= 0x30 && c <= 0x39) || c == ' '){
+          sign_sw = 1;
+	  }
+        move(y, x + i);
+	printw("%c", c);
+	in_leng++;
+	str[i] = c;
+      }
+    erase_cursor();
+    }
+  return(c);
+  }
+
+/*
+ *  EPH_getdecimal - get decimal
+ */
+int EPH_getdecimal(y, x, str, str_size)
+int x, y, str_size;
+char *str;
+{
+  int i, j, c, in_leng, ins_sw=0, sign_sw=0, dot_sw=0, num_sw=0;
+
+  in_leng = strlen(str);
+  if(ins_sw) {
+    mvprintw(1, 0, "Insert mode   ");
+    } else {
+    mvprintw(1, 0, "Overwrite mode");
+    }
+  for(i = 0; i < str_size; i++) {
+/*
+  for(i = 0; i <= str_size; i++) {
+    if(i == str_size) { i--; }
+*/
+    move(y, x + i);
+    disp_cursor();
+    c = getch();
+    if(c ==  0x0a || c ==0x09 || c ==  0x1b || c ==KEY_UP || c ==KEY_DOWN) { break; }
+    if(i == 0 && (c == KEY_BACKSPACE || c == KEY_LEFT)) { break; }
+    if(i + 1 ==  in_leng && c == KEY_RIGHT) { break; }
+    switch(c) {
+      case KEY_RIGHT:
+	if(i >=  in_leng) { i--; }
+	break;
+      case KEY_BACKSPACE:
+      case KEY_LEFT:
+	if(i > 0) { i -= 2; } else  { i--; }
+	break;
+      case KEY_DC:
+      case 0x7f:			 /* 0x7f : Delete	*/
+	mvprintw(y, x + i , "%s", str + i + 1);
+	printw("%s", " ");
+	if(in_leng  - 1 > i) {
+	  for(j = i; j < in_leng; j++) {
+	    str[j] = str[j+1];
+	    }
+	  }
+	i--;
+	break;
+      case KEY_IC:
+	if(ins_sw) {
+	  ins_sw = 0;
+          mvprintw(1, 0, "Overwrite mode");
+          } else {
+	  ins_sw = 1;
+          mvprintw(1, 0, "Insert mode   ");
+          }
+	i--;
+	break;
+      case 0x0b:			/* ^K */
+	memset(str+i, 0, in_leng - i);
+        move(y, x + i);
+	hline(' ', in_leng - i);
+	i--;
+	break;
+      case 0x0a:
+      case 0x09:
+      case KEY_UP:
+      case KEY_DOWN:
+	break;
+      default:
+	if((c < 0x30 || c > 0x39) && c != '-' && c != '+' && c != ' ' && c != '.'){
+	  i--;
+	  break;
+	  }
+	if((c == '-' || c == '+' || c == ' ') && sign_sw){
+	  i--;
+	  break;
+	  }
+	if(c == '.' && dot_sw){
+	  i--;
+	  break;
+	  }
+	if(c == '.'){
+          dot_sw = 1;
+	  }
+	if((c >= 0x30 && c <= 0x39) || c == '-' || c == '+' || c == ' ' || c == '.'){
+          sign_sw = 1;
 	  }
 	if(ins_sw) {
 	  mvprintw(y, x + i + 1, "%s", str + i);
@@ -776,6 +895,7 @@ char *str;
       }
     erase_cursor();
     }
+  return(c);
   }
 
 /*
@@ -792,16 +912,20 @@ int EPH_getkey()
       case KEY_PPAGE:
       case KEY_UP:
       case KEY_DOWN:
-      case 0x44:		/* D  : DOWNLOAD  */
-      case 0x64:		/* d  : download  */
-      case 0x49:		/* I  : IMPORT    */
-      case 0x69:		/* i  : import    */
-      case ESCAPE:		/* ESC: QUIT      */
-      case 0x51:		/* Q  : QUIT      */
-      case 0x71:		/* q  : quit      */
-      case 0x0a:		/* CR : ENTER KEY */
-      case 0x0b:		/* ^K : Ctrl + K  */
-      case 0x20:		/* Space          */
+      case 0x41:		/* A  : ADD             */
+      case 0x61:		/* a  : add             */
+      case 0x44:		/* D  : DOWNLOAD/DELETE */
+      case 0x64:		/* d  : download/delete */
+      case 0x45:		/* E  : EDIT            */
+      case 0x65:		/* e  : edit            */
+      case 0x49:		/* I  : IMPORT          */
+      case 0x69:		/* i  : import          */
+      case ESCAPE:		/* ESC: QUIT            */
+      case 0x51:		/* Q  : QUIT            */
+      case 0x71:		/* q  : quit            */
+      case 0x0a:		/* CR : ENTER KEY       */
+      case 0x0b:		/* ^K : Ctrl + K        */
+      case 0x20:		/* Space                */
 	break_sw = 0;
 	break;
       }

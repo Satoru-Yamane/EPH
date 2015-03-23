@@ -241,7 +241,7 @@ int	type;
 		dos_puts( "Cannot open file.\n" );
 		break;
 	case E_INIT_UT2ET:
-		dos_puts( "Cannot init UT-ET table.\n" );
+		dos_puts( "Cannot init TT-UTC table.\n" );
 		break;
 	default:
 		dos_puts( "Unkonown FATAL error.\n" );
@@ -613,15 +613,14 @@ static void	parse_arg(int argc, char **argv)
 	}
 }
 
-static int	set_default(void)
+static int set_default(void)
 {
-	ctrl_sw.time_system = JST_IN;
 
-	str2val( "2011/01/01 09:00:00", VAL_LONG_JD, &current.id_start_jd );
-	current.id_ut_et = ut2et( current.id_start_jd );
-	str2val( "2011/01/01 20:00:00", VAL_LONG_JD, &current.start_jd );
-	current.ut_et = ut2et( current.start_jd );
-	str2val( "2011/01/31 20:00:00", VAL_LONG_JD, &current.end_jd );
+	str2val( " 0.000766", VAL_DOUBLE, &current.id_ut_et );
+	str2val( " 0.000766", VAL_DOUBLE, &current.ut_et );
+	str2val( "2012/01/01 20:00:00", VAL_LONG_JD, &current.id_start_jd );
+	str2val( "2012/01/01 20:00:00", VAL_LONG_JD, &current.start_jd );
+	str2val( "2012/01/31 20:00:00", VAL_LONG_JD, &current.end_jd );
 	current.step = 10.0;
 
 	return ( TRUE );
@@ -760,11 +759,6 @@ char	**argv;
 	if ( argc > 1 )
 		parse_arg( argc, argv );
 
-	if (ut2et_init() != 0) {
-		fprintf(stderr, "Cannot initialize UT-ET table.\n");
-		exit (9);
-	}
-
 	if ( eph_term_init( ) ) {
 		exit( 9 );
 	}
@@ -792,6 +786,17 @@ char	**argv;
 		error( E_NOCORE );
 		/* Not reached */
 	}
+
+	/*
+	 *	read TT - UTC Table
+	 */
+	ut2et_init();
+/*
+	if (ut2et_init() != 0) {
+		fprintf(stderr, "Cannot initialize TT-UTC table.\n");
+		exit (9);
+	}
+*/
 
 	erase_cursor();
 
