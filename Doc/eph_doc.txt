@@ -1,0 +1,1782 @@
+
+
+                                                                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                     ‚d‚o‚g
+
+                     œa¯E¬˜f¯‚ÌˆÊ’u„ŽZE“¯’èƒvƒƒOƒ‰ƒ€
+
+
+                                  Version 1.20 
+
+
+
+                             <<< Documentation >>>
+
+
+
+
+
+                             (C)opyright 1988-1991
+
+                                       by
+
+                    ’·“c@Œ’‘¾˜Y / ‚j‚…‚Ž‚” / Kentaro Osada
+                    ŽRª@Œå     / ‘·Œå‹ó   / Satoru Yamane
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+________________________________________________________________________________
+
+y‚Í‚¶‚ß‚Éz
+________________________________________________________________________________
+
+    @‚±‚Ìƒ}ƒjƒ…ƒAƒ‹‚Í EPH Version 1.20 ‚Ì“®ìðŒ‚â”z•zðŒAŒÃ‚¢ƒo[ƒWƒ‡ƒ“‚Æ
+    ‚Ì·ˆÙ‚È‚Ç‚Ìˆê”Ê“I‚ÈŽ–•¿‚É‚Â‚¢‚Ä‘‚¢‚Ä‚ ‚è‚Ü‚·B
+
+    @EPH ‚Íœa¯E¬˜f¯‚Ì‹O“¹—v‘f‚©‚çˆÊ’u„ŽZE“¯’èŒvŽZ“™‚ð‚·‚éƒvƒƒOƒ‰ƒ€‚Å‚·B
+
+    ‚±‚ÌƒvƒƒOƒ‰ƒ€‚Ì“Á’¥‚ÍA
+
+         1) ‘¾—zÀ•W‚ª 7Œ…¸“x‚È‚Ì‚ÅA0.1" ‚Ü‚Å‚Ì¸–§ˆÊ’u‚à³Šm‚ÉŒvŽZ‚Å‚«‚éB
+            ‚Ü‚½‚‘¬ƒ‚[ƒh‚à‚ ‚è‚Ü‚·B
+
+         2) Œõ“xA‚“xE•ûˆÊA”öA‘¾—z‚©‚ç‚Ì—£ŠpAˆÊ‘ŠŠpAŒŽ—îA“úX‰^“®AƒoƒŠ
+            ƒG[ƒVƒ‡ƒ“‚È‚ÇˆÊ’u„ŽZ‚Åo—Í‚³‚ê‚é 20 ˆÈã‚Ì€–Ú‚ðŒvŽZ‚µA‚±‚ê‚ç‚Ì
+            €–Ú‚â•ª“_AŽž(ETƒiSTƒtT)AˆÊ’u¸“xAŽ‹·•â³“™‚ðƒvƒƒOƒ‰ƒ€‚ÌŽÀs
+            ’†‚ÉŽ©—R‚É•ÏXEÝ’è‚µo—Í‚·‚é‚±‚Æ‚ª‚Å‚«‚éB
+
+         3) ƒƒgƒJ[ƒt–@‚ÌŒW”‚âœa¯‚©‚ç‚Ý‚½‘¾—z–ÊŒoˆÜ“xA’n‹…‚Æœa¯‚Ì”ö‚Ì‚È‚·
+            Šp“x‚Æ‚¢‚Á‚½ê–å“I‚È€–Ú‚àŒvŽZ‚Å‚«‚éB
+
+         4) ŠÏ‘ª’n“_‚Å‚ÌÅ“KŠÏ‘ªŽž‚ðŽ©“®“I‚ÉŒˆ’è‚µˆÊ’u„ŽZ‚·‚é‚±‚Æ‚à‚Å‚«‚éB
+
+         5) œa¯E¬˜f¯‚Ì“¯’è‚ð‚¨‚±‚È‚¤‚±‚Æ‚ª‚Å‚«‚éB
+
+         6) ŠÏ‘ª‰Â”\“V‘Ì‚ÌŽ©“®“¯’è‹@”\‚ÅA‘S¬˜f¯Eœa¯‚Ì’†‚©‚ç”CˆÓ‚ÌŽž‚ÉŠÏ
+            ‘ª‰Â”\‚È‚à‚Ì‚Ì‚Ý‚ð‘I‘ð‚µ‚Äo—Í‚Å‚«‚éB
+
+         7) ƒ‰ƒCƒuƒ‰ƒŠŒŸõ‚ª‚Å‚«A¸×‚ÈŠeŽí‹O“¹—v‘fƒf[ƒ^‚È‚Ç‚ðo—ÍB
+
+         8) ƒƒjƒ…[•ûŽ®‚Ì‰æ–ÊB
+
+         9) ¯}ƒvƒƒOƒ‰ƒ€ SAE ‚Ö‚Ìo—Í‚ª‰Â”\B
+
+        10)*“ü—ÍAo—Í‚Æ‚à 1950/2000 ”N•ª“_‚É‘Î‰žB
+
+        11)*MS-DOS (PC-DOS) ”Ä—p”Å‚È‚Ì‚Å MS-DOS(PC-DOS) ‚Ì“®‚­ƒ}ƒVƒ“‚È‚çŽg—p‚Å
+            ‚«‚éBUNIX ƒ}ƒVƒ“‚Å‚àˆê•”“®‚¢‚Ä‚¢‚éB
+
+        12)*ƒ\[ƒX‚ªŒöŠJ‚³‚ê‚Ä‚¢‚éB
+
+    ‚È‚Ç‚Å‚·Bi* ‚Í ver1.20 ‚©‚çBj
+
+    @ƒvƒƒOƒ‰ƒ€‚ÌŒvŽZŽ®‚ÍAŽå‚Æ‚µ‚Ä’·’Jìæ¶‚Ì“V‘Ì‹O“¹˜_‚É‚æ‚è‚Ü‚µ‚½BƒvƒƒO
+    ƒ‰ƒ€‚ÌƒR[ƒfƒBƒ“ƒO‚Í C Œ¾Œê‚ðŽg—p‚µ‚½‘S‚­‚ÌƒIƒŠƒWƒiƒ‹‚Å‚·B
+    @ŽÀÛ‚ÉŠÏ‘ªEŒ¤‹†ŽÒ‚ªŽg—p‚µ‚ÄŽÀ—p‚É‚È‚éƒvƒƒOƒ‰ƒ€‚ðì‚è‚½‚¢‚ÆŽv‚Á‚Ä‚¢‚Ü‚·
+    ‚Ì‚ÅAŽg‚í‚ê‚Ä‚Ý‚½Œã‚Í‚²ˆÓŒ©E‚²Š´‘z‚È‚Ç‚ð‚æ‚ë‚µ‚­‚¨Šè‚¢‚µ‚Ü‚·B
+    @‚Ü‚½Ao—Í’l‚É‚Â‚¢‚Ä‚Í IAUC, EMP, MPC, 1988 COMET HANDBOOK(ICQ) “™‚Æ“¯‚¶
+    ‚Å‚ ‚é‚±‚Æ‚ðŠm”F‚µ‚½‚Â‚à‚è‚Å‚·‚ªA‚Ü‚¾Žv‚í‚ÊƒoƒO‚ª‚ ‚é‚©‚ÆŽv‚¢‚Ü‚·B”­Œ©‚³
+    ‚ê‚½•û‚Í¡Œã‚Ì‰ü—Ç‚ÌŽQl‚Æ‚³‚¹‚Ä‚¢‚½‚¾‚«‚½‚¢‚Ì‚Å‚º‚Ð‚²˜A—‰º‚³‚¢B
+
+
+
+
+
+
+                                      - 1 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+________________________________________________________________________________
+
+y•K—v‚È‹@Þz
+________________________________________________________________________________
+
+    ‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍŽŸ‚ÌŠÂ‹«‚Å“®ì‚µ‚Ü‚·B
+        1)  MS-DOS ‚Ü‚½‚Í PC-DOS ver3.0 ˆÈã‚ª“®ì‚·‚éƒRƒ“ƒsƒ…[ƒ^i‚Ü‚½‚Í UNI
+            X ‚ª“®ì‚·‚éƒRƒ“ƒsƒ…[ƒ^F‚½‚¾‚µ–¢Šm”FŽ–€‚ª‘½‚¢Bj
+
+        2)  ‹ó‚«ƒƒ‚ƒŠ–ñ 190KB ˆÈã(DOS ”Å)
+            ŽqƒvƒƒZƒX‚ð‹N“®‚·‚éê‡‚É‚Í‚»‚ê‘Š‰ž‚É•K—v
+
+        3)  80 Œ…~ 24 sˆÈã‚ð•\Ž¦‚Å‚«‚éƒfƒBƒXƒvƒŒƒCiƒJƒ‰[Eƒ‚ƒmƒNƒ‚Í–â‚í‚È
+            ‚¢j
+
+    @•\Ž¦‚É‚ÍŠ¿ŽšEƒJƒi‚ÍŽg—p‚µ‚Ä‚¢‚Ü‚¹‚ñ‚Ì‚ÅAŠ¿Žš ROM ‚Ì‚È‚¢ƒ}ƒVƒ“‚Å‚à“®ì‰Â
+    ”\‚Å‚·B
+    @‚½‚¾‚µA‰æ–Ê§ŒäiƒJ[ƒ\ƒ‹ˆÊ’u§ŒäA•\Ž¦‘®«‚ÌÝ’èj‚ÉƒGƒXƒP[ƒvEƒV[ƒP
+    ƒ“ƒX‚ðŽg—p‚Å‚«‚é‚±‚Æ‚ªðŒ‚É‚È‚è‚Ü‚·B
+    @ƒvƒƒOƒ‰ƒ€‚Í NEC PC-9801 —p MS-DOS ‚É‚ÄŠJ”­E“®ìŠm”F‚µ‚Ü‚µ‚½‚ªA‚±‚êˆÈŠO
+    ‚Ì‹@Ží‚Ì•û‚Íytermcap‚É‚Â‚¢‚Äz‚Ì€‚É‘‚©‚ê‚Ä‚¢‚éƒV[ƒPƒ“ƒX‚ð‚²Ž©•ª‚Ìƒ}ƒVƒ“
+    ‚É‡‚í‚¹‚Ä‘‚«’¼‚·‚È‚Ç‚Ì‘€ì‚ª•K—v‚Èê‡‚ª‚ ‚è‚Ü‚·B
+    @Œ»Ý‚Ì‚Æ‚±‚ëANEC PC-9801 ‚Ì‘¼‚É‚à NEC PC-98LT, Toshiba J3100SS, IBM PS/
+    55, Fujitsu FM-R ‚È‚Ç‚Å“®ì‚·‚é‚±‚Æ‚ðŠm”F‚µ‚Ä‚¢‚Ü‚·B‚±‚ê‚ç‚Ìƒ}ƒVƒ“‚É‚Â‚¢‚Ä
+    ‚Í termcap ‚ÌƒTƒ“ƒvƒ‹‚ð•t‚¯‚Ä‚ ‚è‚Ü‚·‚Ì‚ÅAŠÂ‹«•Ï”‚ÌÝ’è‚¾‚¯‚ÅŽg‚¦‚é‚æ‚¤‚É
+    ‚È‚è‚Ü‚·B
+    @‚Ü‚½ UNIX ‚É‚Â‚¢‚Ä‚Í SONY NWS-841 OS3.3(BSD4.3) + gcc1.39 ‚É‚ÄƒRƒ“ƒpƒCƒ‹
+    ‚¨‚æ‚Ñ‘å‚Ü‚©‚È“®ìŠm”F‚ð‚µ‚Ü‚µ‚½‚ªA‘¼‚ÌŠÂ‹«‚Å‚ÍˆêØ–¢Šm”F‚Å‚·BUNIX ‚ÉÚ‚µ
+    ‚¢•û‚Ì“Yí‚ðŠú‘Ò‚µ‚Ä‚¢‚½‚è‚µ‚Ü‚·B
+
+    @‚Ü‚½A•‚“®¬”“_‰‰ŽZƒRƒvƒƒZƒbƒT‚Í‘•”õ‚µ‚½•û‚ª‚æ‚¢‚Å‚µ‚å‚¤BƒRƒvƒƒZƒbƒT
+    ‚Í‚È‚­‚Ä‚à“®ì‚µ‚Ü‚·‚ªA‘•”õ‚µ‚½ê‡‚É”ä‚×‚Ä 10 ”{‹ß‚¢ŒvŽZŽžŠÔ‚ª•K—v‚Æ‚È‚è
+    ‚Ü‚·B
+    @¬˜f¯Eœa¯‚Ìƒf[ƒ^‚ª‘å—Ê‚É‚ ‚éê‡‚ÍAŒŸõ‚ÉŽžŠÔ‚ð—v‚·‚é‚Ì‚ÅAƒn[ƒhƒf
+    ƒBƒXƒN‚© RAM ƒfƒBƒXƒN‚Ì‚æ‚¤‚È‚‘¬ƒAƒNƒZƒX‚ª‚Å‚«‚é‹L‰¯”}‘Ì‚ðŽg—p‚µ‚½•û‚ª‚æ‚¢
+    ‚Å‚µ‚å‚¤B
+
+
+
+
+________________________________________________________________________________
+
+y—ªŒê‚É‚Â‚¢‚Äz
+________________________________________________________________________________
+
+    @–{•¶’†AŽŸ‚Ì‚æ‚¤‚È—ªŒê‚ªŽg‚í‚ê‚Ä‚¢‚Ü‚·B
+
+    EMP   Ephemerides of Minor Planets
+    IAUC  International Astronomical Union Circular
+    ICQ   International Comet Quarterly
+    MPC   Minor Planets Circular
+
+    CDP   Cometary Data Processing system
+    DeAN  Desktop Astro Navigator
+    EPH   Ephemerides of Comets and Minor Planets
+    SAE   Star Atlas for EPH
+
+
+                                      - 2 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+________________________________________________________________________________
+
+yPC-9801 ˆÈŠO‚Ì‹@Ží‚Å‚ÌŽg—p --- ‰æ–Ê§Œä(termcap)‚É‚Â‚¢‚Äz
+________________________________________________________________________________
+
+    @‚±‚Ì€‚Í EPH ‚ð•W€ó‘ÔˆÈŠO‚ÅŽg—p‚³‚ê‚é•û‚É•K—v‚Èî•ñ‚Å‚·BNEC PC-9801 +
+     NEC » MS-DOS ‚Ì•W€ó‘Ô‚ÅŽg—p‚·‚é•û‚Í“Ç‚Ý”ò‚Î‚µ‚Ä‰º‚³‚¢B
+    @‚Ü‚½AMS-DOS ‚È‚Ç‚Ì—pŒê‚É‚Â‚¢‚Ä‚Í‘Ð‚È‚Ç‚ðŽQl‚É‚µ‚Ä‚­‚¾‚³‚¢B
+
+    * ŠÂ‹«•Ï”‚ÌÝ’è‚É‚Â‚¢‚Ä
+
+        1) TERM
+            @termcap ƒtƒ@ƒCƒ‹‚É‚¨‚¯‚é‹@Ží(’[––)–¼‚ðŽw’è‚µ‚Ü‚·B
+            @EPH ‚Å‚ÍA‚±‚ê‚ªÝ’è‚³‚ê‚Ä‚¢‚È‚¢ê‡AƒvƒƒOƒ‰ƒ€“à•”‚ÉŽ‚Á‚Ä‚¢‚é
+            ’l(PC-9801 ‚Ì MS-DOS ‚Å‚Ì•W€’l)‚ªŽg—p‚³‚êAtermcap ƒtƒ@ƒCƒ‹‚ÍŽQÆ
+            ‚³‚ê‚Ü‚¹‚ñB
+
+        2) TERMCAP
+            @termcap ƒtƒ@ƒCƒ‹‚Ìƒtƒ@ƒCƒ‹–¼‚ðƒtƒ‹ƒpƒX–¼‚ÅŽw’è‚µ‚Ü‚·B(UNIX ‚Å‚Í
+            ‰º‹L‚ÌƒGƒ“ƒgƒŠ‚ð’¼ÚƒZƒbƒg‚µ‚Ä‚à‚æ‚¢B)
+            @ŠÂ‹«•Ï” TERM ‚ªÝ’è‚³‚ê‚Ä‚¢‚éê‡‚É‚Í•K‚¸Ý’è‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B
+            (‚ ‚é‚¢‚Í \etc\termcap ƒtƒ@ƒCƒ‹‚ª‚ ‚ê‚ÎÝ’è‚µ‚È‚­‚Ä‚à‚æ‚¢B)
+            @termcap ƒtƒ@ƒCƒ‹‚Ì“Ç‚ÝŽæ‚è‚ÉŽ¸”s‚µ‚½ê‡AEPH ‚Í“®ì‚µ‚Ü‚¹‚ñB
+
+
+    * termcap ƒtƒ@ƒCƒ‹‚Ì“à—e‚É‚Â‚¢‚Ä
+
+    @termcap ƒtƒ@ƒCƒ‹‚Í’Êí‚ÌƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚Å‚·BƒeƒLƒXƒgƒGƒfƒBƒ^‚È‚Ç‚Å“à—e
+    ‚ð•ÏX‚·‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·‚Ì‚ÅA“K‹X‚²Ž©•ª‚Ìƒ}ƒVƒ“‚É‚ ‚Á‚½Ý’è‚ð‚µ‚Ä‰º‚³‚¢B
+    ‘Ž®‚ÍˆÈ‰º‚Ì‚æ‚¤‚É‚È‚Á‚Ä‚¢‚Ü‚·B(<> “à‚Í•K{A[] “à‚ÍÈ—ª‰Â”\)
+
+    <termcap>   <1 ’[––•ªƒGƒ“ƒgƒŠ>[<1 ’[––•ªƒGƒ“ƒgƒŠ>]
+
+        <1 ’[––•ªƒGƒ“ƒgƒŠ> <’[–––¼>[|<’[–––¼>]:<ƒGƒ“ƒgƒŠ>[:<ƒGƒ“ƒgƒŠ>]<‰üs>
+
+            <’[–––¼>                     ŠÂ‹«•Ï” TERM ‚ÅŽw’è‚·‚é’[–––¼
+
+            <ƒGƒ“ƒgƒŠ>
+
+                <‹L†>                   ‹L†‚ª‘¶Ý‚·‚ê‚Î‹L†‚ÌˆÓ–¡‚ª TRUE
+
+                <‹L†>=<•¶Žš—ñ>          ‹L†‚ª•\‚·‹@”\‚ð<•¶Žš—ñ>‚ÅŽÀŒ»
+                    <•¶Žš—ñ>
+                        ^x               ƒRƒ“ƒgƒ[ƒ‹x
+                        \ooo             8 i”
+                        \E               ƒGƒXƒP[ƒv(\033 ‚Æ“¯’l)
+                        \\               \ Ž©g
+                        ‚»‚êˆÈŠO‚Ì•¶Žš   ‚»‚Ì•¶ŽšŽ©g
+
+                <‹L†>#<”’l>            ‹L†‚ª•\‚·ˆÓ–¡‚ð<”’l>‚Æ‚·‚é
+
+                \                        \ ‚É‘±‚­ 1 •¶Žš‚ðƒGƒXƒP[ƒv
+
+
+    @EPH ‚ÅŽg—p‚·‚éƒGƒ“ƒgƒŠ‚ÆAtermcap ƒtƒ@ƒCƒ‹‚ª–³‚©‚Á‚½ê‡‚ÉŽg—p‚³‚ê‚é’l‚Í
+    ‚Â‚¬‚Ì’Ê‚è‚Å‚·B(NEC PC-9801 MS-DOS ‚Å‚ÌƒfƒtƒHƒ‹ƒgó‘Ô‚Æ“¯‚¶B)
+
+
+                                      - 3 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+
+    y•K{‚ÌƒGƒ“ƒgƒŠz
+
+            1) ‰æ–ÊƒTƒCƒYŠÖ˜A
+                co        80                /* columns */
+                li        25                /* lines */
+
+        * ‚±‚ê‚ç‚ÌŽæ“¾‚ÉŽ¸”s‚·‚é‚©A80~24 ˆÈ‰º‚Ì‰æ–Ê‚ÌL‚³‚µ‚©‚È‚¢‹@Ží(’[––)‚Å
+            ‚ÍAEPH ‚Í“®ì‚µ‚Ü‚¹‚ñB
+
+            2) ƒJ[ƒ\ƒ‹ˆÚ“®ŠÖ˜A
+                cm        "\E[%i%2%2H"      /* move cursor to row/column */
+                up        "\E[A"            /* cursor up */
+                sc        "\E[s"            /* save sursor */
+                rc        "\E[u"            /* restore curosr */
+
+            3) •\Ž¦‘®«ŠÖ˜A
+                mr        "\E[7m"           /* reverse */
+                me        "\E[m"            /* exit Modify */
+
+            4) síœ
+                dl        "\E[1M"           /* delete line */
+
+        * ‚±‚ê‚ç‚ÌŽæ“¾‚ÉŽ¸”s‚µ‚½ê‡AEPH ‚Í“®ì‚µ‚Ü‚¹‚ñB(‚½‚¾‚µ IBM PC ŒÝŠ·‹@
+            ‚Å‚Í dl ‚ÉŒÀ‚è -IBM ƒIƒvƒVƒ‡ƒ“‚Å“®ì‚³‚¹‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B)
+
+    y‚È‚­‚Ä‚à“®ì‚·‚é‚ªŒxƒƒbƒZ[ƒW‚ªo‚éƒGƒ“ƒgƒŠz
+
+            1) ’[––‰ŠúÝ’è‚È‚Ç
+                ti        "\E>1h"           /* initialize terminal */
+                te        "\E>1l"           /* de-initialize terminal */
+
+            2) ƒNƒŠƒAŠÖ˜A
+                ce        "\E[K"            /* clear to end of line */
+                cd        "\E[0J"           /* clear to end of screen */
+                cl        "\E[2J"           /* clear screen & cursor home */
+
+            3) •\Ž¦‘®«ŠÖ˜A
+                us        "\E[4m"           /* enter underline */
+                ue        "\E[m"            /* exit  underline */
+                mb        "\E[5;33m"        /* enter blink */
+                md        "\E[33m"          /* enter bold */
+                mh        "\E[34m"          /* enter half-bright */
+                so        "\E[36m"          /* enter stand-out */
+                se        "\E[m"            /* exit  stand-out */
+
+            4) ƒJ[ƒ\ƒ‹‚Ì‰ÂŽ‹§ŒäŠÖ˜A
+                vi        "\E[>5h"          /* cursor visible */
+                ve        "\E[>5l"          /* cursor invisible */
+
+            5) ƒJ[ƒ\ƒ‹ƒL[‚ÌÝ’è
+                kl        "\010"            /* left  cursor key */
+                kr        "\014"            /* right cursor key */
+                ku        "\013"            /* up    cursor key */
+                kd        "\012"            /* down  cursor key */
+                kI        "\EP"             /* insert key */
+
+
+                                      - 4 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+                kD        "\ED"             /* delete key */
+
+        @‚±‚ê‚ç‚Ì‚¤‚¿“®ì‚ÉŽxá‚ª‚È‚¢‚à‚Ì‚ÌŽæ“¾‚ÉŽ¸”s‚·‚é‚ÆŒxƒƒbƒZ[ƒW‚ª‚Å
+        ‚Ü‚·‚ªA‹N“®ƒIƒvƒVƒ‡ƒ“ -dumb ‚É‚æ‚èƒƒbƒZ[ƒW‚ð—}§‚·‚é‚±‚Æ‚à‚Å‚«‚Ü‚·B
+
+    * -IBM ƒIƒvƒVƒ‡ƒ“‚É‚Â‚¢‚Ä
+
+        @IBM PC ŒÝŠ·‹@‚Å EPH ‚ðŽg—p‚·‚é‚É‚ ‚½‚Á‚Ä‚ÍAŽŸ‚Ì‚æ‚¤‚ÈŽ–î‚©‚ç“Á•Ê‚É
+         -IBM ‚Æ‚¢‚¤‹N“®ƒIƒvƒVƒ‡ƒ“‚ð‚Â‚¯‚é‚æ‚¤‚É‚È‚Á‚Ä‚¢‚Ü‚·B
+
+        1) síœ‚¨‚æ‚ÑƒJ[ƒ\ƒ‹‰ÂŽ‹§Œä‚ÌƒV[ƒPƒ“ƒX‚ª–³‚¢B
+                  --->  -IBM ƒIƒvƒVƒ‡ƒ“‚ÌŽw’è‚É‚æ‚è BIOS ŒÄo‚ÅŽÀŒ»B
+
+        2) ƒJ[ƒ\ƒ‹ƒL[ƒR[ƒh‚ª 2byte ŒÅ’è‚ÅA‚©‚Â 0x00 ‚©‚çŽn‚Ü‚è termcap ‚Å‚Í
+            ˆµ‚¢‚É‚­‚¢B
+                  --->  “¯‚¶‚­ -IBM ƒIƒvƒVƒ‡ƒ“‚Å termcap ‚ÌŽw’è‚É‚©‚©‚í‚ç‚¸ 0x
+                        00 ‚©‚çŽn‚Ü‚éŒÅ’è‚ÌƒR[ƒh‚Å”»’f‚·‚éB
+
+        @‚µ‚½‚ª‚Á‚Ä -IBM ƒIƒvƒVƒ‡ƒ“‚Íâ‘Î‚É‘¼‚Ìƒ}ƒVƒ“‚Å‚ÍŽw’è‚µ‚È‚¢‚Å‰º‚³‚¢B
+        ‚à‚µŽw’è‚µ‚½ê‡AƒvƒƒOƒ‰ƒ€‚ª–\‘–‚·‚é‰Â”\«‚ª‘å‚Å‚·B‚Ü‚½ABIOS ŒÄo‚Í
+        Œã‚©‚çŠÔ‚É‡‚í‚¹‚Å•t‚¯‚½‚à‚Ì‚Å•K—vÅ¬ŒÀ‚É‚µ‚½‚©‚Á‚½‚Ì‚ÅA-IBM ƒIƒvƒVƒ‡
+        ƒ“‚ðŽw’è‚µ‚Ä‚àAã‹L‚Ì‘¼‚ÌƒV[ƒPƒ“ƒX‚ð“¾‚é‚½‚ß‚ÉˆË‘R termcap ƒtƒ@ƒCƒ‹‚Í
+        •K—v‚Å‚·B(•Ï‚ÈŽd—l‚Å‚·‚Ý‚Ü‚¹‚ñB:-)
+
+
+    y—áz   PC-9801 ‚É KI-Shell ‚ð‚Ì‚¹‚Ä‚¢‚éŽž‚Ì termcap ƒtƒ@ƒCƒ‹‚Ì—á
+    #
+    #       eph98 monochrome with KI-shell
+    #
+    #
+    eph98ksh|pc-9801eph:\
+            :co#80:li#25:xn:am:bs:bl=^G:ti=\E[>1h:te=\E[>1l:\
+            :so=\E[7m:se=\E[m:us=\E[4m:ue=\E[m:\
+            :mr=\E[7m:mb=\E[5m:md=\E[m:mh=\E[2m:mk=\E[8m:me=\E[m:\
+            :kl=\E<:kd=\E_:ku=\E\^:kr=\E>:kI=\EI:kD=\ED:\
+            :vi=\E[>5h:ve=\E[>5l:tc=ansi:
+
+
+
+
+________________________________________________________________________________
+
+yƒƒjƒ…[‚É‚Â‚¢‚Äz
+________________________________________________________________________________
+
+    @ƒvƒƒOƒ‰ƒ€‚Ì‘€ì‚ÍŠî–{“I‚Éƒƒjƒ…[•ûŽ®‚É‚È‚Á‚Ä‚¢‚Ü‚·B‚Ü‚½Aˆê“x“ü—Í‚µ‚½
+    ’l‚Í‚Å‚«‚é‚¾‚¯Ä“ü—Í‚ð‚¹‚¸‚É‚·‚Þ‚æ‚¤‚É‚È‚Á‚Ä‚¢‚Ü‚·B
+
+    @ƒƒjƒ…[‚Í‰º}‚Ì‚æ‚¤‚ÈŠK‘w\‘¢‚É‚È‚Á‚Ä‚¢‚Ü‚·BiŽ†–Ê‚Ì“s‡ãAŽÀÛ‚Ìƒƒj
+    ƒ…[‚Éo‚é‚à‚Ì‚æ‚è’Z‚¢‚à‚Ì‚ª‚ ‚è‚Ü‚·Bj
+
+    @ƒƒjƒ…[‚Ì‘I‘ð‚ÍA’Êí‚ÍƒJ[ƒ\ƒ‹ƒL[‚Å”½“]i‚Ü‚½‚ÍƒAƒ“ƒ_[ƒ‰ƒCƒ“j•\Ž¦‚³
+    ‚ê‚Ä‚¢‚éƒƒjƒ…[€–Ú‚ðˆÚ“®‚µ‚Äs‚¢‚Ü‚·B
+    @‘I‘ð‚³‚ê‚½ƒƒjƒ…[‚ðŽÀs‚·‚é‚É‚Í RETURN ƒL[‚ð‰Ÿ‚µ‚Ü‚·B
+
+    @‚Ü‚½A"x/...." ‚Æ‚¢‚¤‚æ‚¤‚ÉƒRƒ}ƒ“ƒhƒL[ x ‚ª•\Ž¦‚³‚ê‚Ä‚¢‚é‚Æ‚«‚ÍAx i‘åA
+
+
+                                      - 5 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+    ¬•¶Žš‚Í‹æ•Ê‚³‚ê‚Ü‚¹‚ñj‚ð‰Ÿ‚·‚ÆA‚»‚Ìƒƒjƒ…[‚ª‘¦À‚ÉŽÀs‚³‚ê‚Ü‚·B
+
+    @‚È‚¨ƒƒjƒ…[‚Ì€–Ú‚Ì’†‚É‚ÍÝ’èðŒ‚É‚æ‚Á‚Ä‚Í‘I‘ð‚·‚é‚±‚Æ‚ª•s“KØ‚Èê‡‚ª
+    ‚ ‚è‚Ü‚·Bi¬˜f¯‚Ìo—Í€–Ú‚É”ö‚Ì’·‚³‚ð‘I‚Ô‚È‚Çj‚±‚Ì‚æ‚¤‚ÈŽžA‘I‘ð‚Å‚«‚È
+    ‚¢€–Ú‚Í€–Ú‚Ì’¼‘O‚É '-' ‚ª‚Â‚¯‚ç‚êA‚©‚Â half-bright ‘®«iPC-9801 ‚Ì•W€
+    ó‘Ô‚Ìê‡ BLUE ‚É‚µ‚Ä‚ ‚è‚Ü‚·Bj‚Å•\Ž¦‚³‚êAƒXƒLƒbƒv‚³‚ê‚é‚æ‚¤‚É‚È‚Á‚Ä‚¢
+    ‚Ü‚·B
+
+
+
+                     |---  Load elem. from File
+                     |
+                     |                           |---  Roman numeral(C)
+                     |                           |---  Pr.design(C)/Number(M)
+                     |                           |---  Name
+                     |                           |---  Osculation epoch
+                     |                           |---  Mean anomaly(M)
+                     |                           |---  Time of peri.pass(C)
+                     |                           |---  peri.
+                     |                           |---  node
+                     |                           |---  Incl.
+                     |---  Edit Current Orbit  --|---  Perihelion distance
+                     |                           |---  Eccentricity
+                     |                           |---  Semi-major axis
+                     |                           |---  Daily motion
+                     |                           |---  Period
+                     |                           |---  H1(C)
+                     |                           |---  K1(C)
+                     |                           |---  H2(C)/H(M)/B(1,0)(M)
+                     |                           |---  K2(C)
+                     |                           |---  G(M)
+                     |                           |---  Tail length(C)
+                     |                           |---  Upper-Menu
+                     |
+                     |                           |---  UT - ET [day]
+                     |                           |---  Date Start
+                     |---  Edit Current Date  ---|---  Date End
+                     |                           |---  Step[days]
+                     |                           |---  Upper-Menu
+                     |
+                     |                           |---  Longitude
+|-- Ephemeris   -----|---  Edit Current Location +---  Latitude
+|  iˆÊ’u„ŽZj      |                           |---  Height
+|                    |                           |---  Upper-Menu
+|                    |
+|                    |---  Caluclation
+|                    |
+|                    |                           |---  Julian day
+|                    |                           |---  Modified julian day
+|                    |                           |---  Year
+|                    |                           |---  Type of month
+|                    |---  Select output date  --+---  Day
+|                    |                           |---  Day of week
+|                    |                           |---  Time
+|                    |                           |---  Upper-Menu
+|                    |
+
+
+                                      - 6 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+|                    |                           |---  Equinox(B1950)
+|                    |                           |---  Equinox(J2000)
+|                    |                           |---  Equinox(date)
+|                    |                           |---  Delta
+|                    |                           |---  Radius
+|                    |                           |---  Daily motion
+|                    |                           |---  m1(C)
+|                    |---  Select output item  1 +---  m2(C)
+|                    |                           |---  V/B(M)
+|                    |                           |---  Elongation
+|                    |                           |---  Altitude/Azimuth
+|                    |                           |---  Tail(C)
+|                    |                           |---  Phase
+|                    |                           |---  Moon age
+|                    |                           |---  Moon light
+|                    |                           |---  Motion & Pos. Angle
+|                    |                           |---  Variation of T(C)/M(M)
+|                    |                           |---  Upper-Menu
+|                    |
+|                    |                           |---  Constants of Metcalf
+|                    |---  Select output item  2 +---  Sun B/L from object
+|                    |                           |---  Earth-tail angle(C)
+|                    |                           |---  Upper-Menu
+|                    |
+|                    |                           |---  Orbital elem. output
+|                    |                           |---  Comment field output
+|                    |                           |---  Calculation accuracy
+|                    |                           |---  Output accuracy
+|                    |---  Output control   -----|---  Correct parallax
+|                    |                           |---  Optimum obs. tdate
+|                    |                           |---  Optimum obs. time
+|                    |                           |---  IAUC style
+|                    |                           |---  Output mode
+|                    |                           |---  Stop scroll(more)
+|                    |                           |---  Fixed orbital elem.
+|                    |                           |---  Output device
+|                    |                           |---  Upper-Menu
+|                    |---  Invoke SAE
+|                    |
+|                    |---  Back to Main Menu
+|
+|                    |---  Edit Current Date  ---|---  Date
+|                    |                           |---  Upper-Menu
+|                    |
+|                    |                           |---  R.A. (B1950)
+|                    |---  Edit Current Range  --|---  Decl. (B1950)
+|                    |                           |---  Range[deg]
+|                    |                           |---  Mag. limit
+|                    |                           |---  Min.Altitude
+|                    |                           |---  Upper-Menu
+|                    |
+|                    |                           |---  Longitude
+|-- Identification --|---  Edit Current Location +---  Latitude
+|  i“¯’èj          |                           |---  Height
+|                    |                           |---  Upper-Menu
+|                    |
+
+
+                                      - 7 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+|                    |---  Caluclation
+|                    |
+|                    |---  Output control   -----|---  Output mode
+|                    |                           |---  Stop scroll(more)
+|                    |                           |---  Output device
+|                    |                           |---  Upper-Menu
+|                    |
+|                    |---  Invoke SAE
+|                    |
+|                    |---  Back to Main Menu
+|
+|                    
+|-- Library Search --|---  Search
+|                    |---  Back to Main Menu
+|
+|                    |---  Target(C/M)
+|                    |---  Time system(JST/ET/UT/TD)
+|                    |---  ET-UT conversion(Auto/Manual)
+|                    |---  Epoch of Orbital Element
+|                    |---  Eph.Date mode(Multi/Single)
+|                    |---  Eph.Step mode(Day/Time)
+|                    |---  Metcalf parameter
+|                    |---  Lib. elem. File(C)
+|-- System control --|---  Lib. elem. File(M)
+|                    |---  EPH elem. File(C)
+|                    |---  EPH elem. File(M)
+|                    |---  Scan direction
+|                    |---  Work Eph.  Out File
+|                    |---  Work Ident Out File
+|                    |---  DeAN SCRipt File
+|                    |---  DeAN MaRKer File
+|                    |---  Back to Main Menu
+|
+|                    |---  Load Orbital element
+|                    |---  Edit Current Orbit
+|                    |---  Edit comment field
+|                    |---  Save Orbit element
+|-- System filer   --|---  Delete Orbit element
+|                    |---  Undel Orbit element
+|                    |---  Pack Orbit file (DOS only)
+|                    |---  Back to Main Menu
+|
+|-- Utility ---------|---  DOS shell call
+|   (DOS only)       |---  Back to Main Menu
+|
+|-- Quit
+
+
+        () “à : C  =Comet    / M  =Minor Planet
+                Con=Console  / Prn=Printer
+                Std=Standard / SAE=Star Atlas for EPH
+
+
+
+
+
+
+
+                                      - 8 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+________________________________________________________________________________
+
+y“ü—ÍƒtƒB[ƒ‹ƒh•ÒW‚É‚Â‚¢‚Äz
+________________________________________________________________________________
+
+
+    @”’l‚â•¶Žš‚Ì“ü—ÍŽž‚É‚ÍŽŸ‚Ì‚æ‚¤‚È•ÒWƒL[‚ªŽg‚¦‚Ü‚·Biver1.10 ˆÈ‘O‚æ‚è­
+    ‚µ‹­‰»‚³‚ê‚Ü‚µ‚½Bj
+
+        ‘}“ü^ã‘‚«Ø‚è‘Ö‚¦iƒgƒOƒ‹j  ctrl-O ‚Ü‚½‚Í termcap:kI ‚Ü‚½‚Í INS
+        ƒJ[ƒ\ƒ‹ã‚Ì•¶Žšíœ            ctrl-G ‚Ü‚½‚Í termcap:kD ‚Ü‚½‚Í DEL
+        ƒJ[ƒ\ƒ‹‚ð‰E‚Ö                  ctrl-D ‚Ü‚½‚Í termcap:kr ‚Ü‚½‚Í ¨
+                                               ‚Ü‚½‚Í ctrl-F
+        ƒJ[ƒ\ƒ‹‚ð¶‚Ö                  ctrl-S ‚Ü‚½‚Í termcap:kl ‚Ü‚½‚Í ©
+                                               ‚Ü‚½‚Í ctrl-B
+        ƒJ[ƒ\ƒ‹¶‚Ì•¶Žšíœ            BS(ctrl-H)
+        •ÒW‚â‚è’¼‚µ                    ctrl-R
+        •ÒWI—¹                        ESC(ctrl-[) / CR(ctrl-M)
+                                        ctrl-E ‚Ü‚½‚Í termcap:ku ‚Ü‚½‚Í ª
+                                        ctrl-X ‚Ü‚½‚Í termcap:kd ‚Ü‚½‚Í «
+        ƒJ[ƒ\ƒ‹ˆÈ~‹ó”’‚Æ‚µ‚Ä•ÒWI—¹  TAB(ctrl-I)
+
+    @‚½‚¾‚µA‘}“üEíœ‚É‚Â‚¢‚Ä‚ÍA“ú•t“ü—Í‚Ì‚æ‚¤‚ÉƒtƒH[ƒ}ƒbƒgŽw’è‚µ‚½ƒtƒB[
+    ƒ‹ƒh‚É‚¨‚¢‚ÄŒã‘±•¶Žš‚ÌƒJƒ‰ƒ€‚ª‚¸‚ê‚Ä‚Í¢‚é‚Ì‚ÅA‚»‚ê‚¼‚ê‘}“üƒ‚[ƒhØ‚è‘Ö‚¦
+    ‚Í–³Ž‹ABS ‚É‚æ‚éíœ‚Í¶‚Ö‚ÌˆÚ“®‚Æ‚È‚Á‚Ä‚¢‚Ü‚·B
+
+    @‚Ü‚½ƒtƒH[ƒ}ƒbƒgŽw’è‚µ‚Ä‚¢‚È‚¢ƒtƒB[ƒ‹ƒh‚Å‚ÍA•ÒWŠJŽnŽž‚Í‘}“üƒ‚[ƒh‚É‚È
+    ‚Á‚Ä‚¢‚Ü‚·B
+    @DOS ã‚Å‚Í•ÒWAŒŸõ‚Æ‚àŠ¿Žš(Shift-JIS)‚É‘Î‰ž‚µ‚Ä‚¢‚é‚Ì‚ÅAƒRƒƒ“ƒg‚È‚Ç‚Í
+    Š¿Žš‚Ì¬ÝŽg—p‚à‰Â”\‚Å‚·B
+
+    @‚Ü‚½ ver1.10 ‚Ü‚Å‚Í ESCAPE ‚Í•ÒWƒLƒƒƒ“ƒZƒ‹‚àˆÓ–¡‚µ‚Ä‚¢‚Ü‚µ‚½‚ªA’Êí‚Íã
+    ˆÊƒƒjƒ…[‚Ö‚Ì•œ‹A‚ÌˆÓ–¡‚ÅŽg‚¤l‚ª‘½‚¢‚ÆŽv‚í‚ê‚½‚Ì‚ÅAESCAPE ‚Å‚à•ÒW‚ÍŠm’è
+    ‚Æ‚µA‘ã‚í‚è‚É ctrl-R ‚Å•ÒW‚ð‚â‚è’¼‚¹‚é‚æ‚¤‚É‚µ‚Ü‚µ‚½B
+
+
+
+
+________________________________________________________________________________
+
+yƒtƒ@ƒCƒ‹‚©‚ç‚ÌŒŸõðŒ‚ÌÝ’è•û–@‚É‚Â‚¢‚Äz
+________________________________________________________________________________
+
+    @ver1.10 ˆÈ‘O‚Ì”Å‚Å‚ÍA‹O“¹—v‘fƒtƒ@ƒCƒ‹‚Ì‘€ì‚É‚ÍƒL[ƒ[ƒh‚ð“ü—Í‚µA‚»‚Ì
+    ƒL[ƒ[ƒh‚Æƒ[ƒ}•„†A‰¼•„†Aœa¯–¼AƒRƒƒ“ƒg‚Ì’†‚Ì•¶Žš‚ªƒ}ƒbƒ`‚µ‚½‚Æ‚«
+    ‚ÉA‘I‘ð‰æ–Ê‚É•\Ž¦‚³‚ê‚Ä‚¢‚Ü‚µ‚½‚ªAVer 1.20 ˆÈ~‚ÍƒL[ƒ[ƒh‚Ì‘ã‚í‚è‚ÉAˆÈ
+    ‰º‚ÉŽ¦‚·ŠeƒtƒB[ƒ‹ƒh‚ÉðŒ‚ð“Æ—§‚ÉÝ’è‚·‚é‚±‚Æ‚ª‚Å‚«‚é‚æ‚¤‚É‚È‚Á‚Ä‚¢‚Ü‚·B
+    i]—ˆALibrary Search ƒƒjƒ…[‚Ì Edit Range ‚Å‚Ì‚ÝŽw’è‚Å‚«‚½ðŒÝ’è‚É‘Š“–
+    ‚µ‚Ü‚·Bj
+
+        ƒtƒB[ƒ‹ƒh                        ‘®«        “à—e
+      ----------------------------------------------------------------
+        Roman numeral designation         •¶Žš        ƒ[ƒ}•„†
+        Provisional desig. / Number       •¶Žš        ‰¼•„†
+        Comet / Minor planet Name         •¶Žš        –¼‘O
+        Osculation epoch       [ET]       ”’l        Œ³Šú
+
+
+                                      - 9 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+        Mean anomaly           [deg]      ”’l        •½‹Ï‹ß“_Šp
+        Time of peri. passage  [ET]       ”’l        ‹ß“ú“_’Ê‰ß“ú
+        Argument of perihelion [deg]      ”’l        ‹ß“ú“_ˆö”
+        Longitude of asc. node [deg]      ”’l        ¸Œð“_‰©Œo
+        Inclination            [deg]      ”’l        ‹O“¹ŒXŽÎŠp
+        Perihelion distance    [AU]       ”’l        ‹ß“ú“_‹——£
+        Eccentricity                      ”’l        —£S—¦
+        Semi-major axis        [AU]       ”’l        ‹O“¹’·”¼Œa
+        Daily motion                      ”’l        “ú‰^“®—Ê
+        Period              [Years]       ”’l        ŽüŠú
+        Note                              •¶Žš        ƒRƒƒ“ƒgilong format ‚Ì
+    ‚Ýj
+
+    * ŒŸõðŒ‚Ì‘‚«•û
+
+    @ƒJ[ƒ\ƒ‹ˆÚ“®ƒL[‚ÅðŒ‚ðŽw’è‚µ‚½‚¢ƒtƒB[ƒ‹ƒh‚Ì‚Æ‚±‚ë‚Ü‚Ås‚«AˆÈ‰º‚É‘‚­
+    ‚æ‚¤‚È‘Ž®‚ÅðŒ‚ð‘‚«ž‚Ý‚Ü‚·B‰½‚à‘‚©‚ê‚Ä‚¢‚È‚¢‚Æ‚±‚ë‚ÍŒŸõ‚Ì‘ÎÛ‚É‚Í‚È
+    ‚è‚Ü‚¹‚ñBi‚»‚ÌƒtƒB[ƒ‹ƒh‚ÉŠÖ‚µ‚Ä‚Íí‚É^‚Æ‚Ý‚È‚µ‚Ü‚·Bj
+    @Šó–]‚·‚éðŒ‚ðŽw’è‚µI‚Á‚½‚ç Scan Go ‚Ì‚Æ‚±‚ë‚ÅƒŠƒ^[ƒ“ƒL[‚ð‰Ÿ‚·‚ÆŽÀÛ‚Ì
+    ŒŸõ‚ªŽn‚Ü‚è‚Ü‚·B
+    @’†’f‚Í Return to Menu ‚ð‘I‘ð‚·‚é‚©AESCAPE ‚Ü‚½‚Í ctrl-C ƒL[‚ð‰Ÿ‚µ‚Ü‚·B
+    ƒtƒB[ƒ‹ƒh‚ÌƒNƒŠƒA‚É‚Í TAB ƒL[‚ðŽg‚¤‚Æ•Ö—˜‚Å‚·B
+    @‚È‚¨ŒŸõðŒ‚ÍƒvƒƒOƒ‰ƒ€I—¹‚Ü‚Å•Û‘¶‚³‚ê‚Ü‚·B
+
+        1) ”’l‚ÌƒtƒB[ƒ‹ƒhi“ú•t‚âŽž‚È‚Ç‚àŠÜ‚Þj
+
+                <  x           ƒtƒB[ƒ‹ƒh‚Ì’l‚ª x ‚æ‚è¬‚³‚¢
+                <= x           ƒtƒB[ƒ‹ƒh‚Ì’l‚ª x ˆÈ‰º
+                x              ƒtƒB[ƒ‹ƒh‚Ì’l‚ª x ‚Æ“™‚µ‚¢
+                >= x           ƒtƒB[ƒ‹ƒh‚Ì’l‚ª x ˆÈã
+                >  x           ƒtƒB[ƒ‹ƒh‚Ì’l‚ª x ‚æ‚è‚à‘å‚«‚¢
+                x:y            ƒtƒB[ƒ‹ƒh‚Ì’l‚ª x ˆÈã y ˆÈ‰º
+
+                —áj    <1990/01/01      1990/01/01 ‚æ‚è‘O
+                        <=1.0            1.0 ˆÈ‰º
+                        >1.0             1.0 ‚æ‚è‘å‚«‚¢
+                        >=1.0            1.0 ˆÈã
+
+
+        @‚È‚¨A<, >, =, : ‚È‚Ç‚Ì‹L†‚Æ”’l‚ÌŠÔ‚É‚Í‹ó”’‚ª“ü‚Á‚Ä‚à\‚¢‚Ü‚¹‚ñ‚ªA
+        >=, <= ‚Ì•s“™†‚Æ“™†‚ÌŠÔ‚É‹ó”’‚ð“ü‚ê‚È‚¢‚Å‰º‚³‚¢B
+        @Œ‹‰Ê‚Í•s’è‚Å‚·Bi‘½‚­‚Ìê‡ x ‚Í 0 ‚Æ‚Ý‚È‚³‚ê‚Ü‚·Bj‚Ü‚½A‚»‚Ì‚æ‚¤
+        ‚È“ü—Í‚ð‚µ‚½‚Æ‚«‚É‚Í“Á‚ÉƒGƒ‰[ƒƒbƒZ[ƒW‚Í‚Å‚Ü‚¹‚ñ‚Ì‚Å‚²’ˆÓ‰º‚³‚¢B
+
+        @‚Ü‚½A”ÍˆÍŽw’è‚Å‚ÍA‚©‚È‚ç‚¸ "Å¬’l:Å‘å’l" ‚Æ‚¢‚¤‡‚É‘‚¢‚Ä‰º‚³‚¢B
+        ‹t‚É‘‚¢‚½ê‡A•’Ê‚Íƒ}ƒbƒ`‚µ‚Ü‚¹‚ñB
+        @‚½‚¾‚µA—á‚¦‚ÎŠp“x‚È‚Ç‚Å 350:10 ‚È‚Ç‚Æ‚¢‚¤‚æ‚¤‚É‘‚©‚ê‚½ê‡‚É‚ÍˆÓ–¡
+        ‚ª‚ ‚é‚Ì‚Åƒ}ƒbƒ`‚µ‚Ü‚·B
+        @‚¢‚¸‚ê‚Ìê‡‚É‚à x ‚É”’l‚Æ‚µ‚ÄˆÓ–¡‚Ì‚È‚¢’l‚ðŽw’è‚·‚é‚ÆA‚»‚Ì’l‚Í 0 
+        ‚Æ‚Ý‚È‚µ‚Ü‚·B
+
+        1) •¶Žš‚ÌƒtƒB[ƒ‹ƒh
+            @•¶Žš‚ÌƒtƒB[ƒ‹ƒh‚É‚Í³‹K•\Œ»‚ªŽg‚¦‚Ü‚·B
+
+       ³‹K•\Œ»
+
+
+
+                                      - 10 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+            ³‹K•\Œ»‚Íegrep‚Æ“¯—l‚ÌŠg’£‚³‚ê‚½‚à‚Ì‚ÅAˆÈ‰º‚Ì•¶Žš‚©‚ç‚È‚éB(jgaw
+            k ‚Ìƒ}ƒjƒ…ƒAƒ‹‚æ‚è”²ˆ)
+                 c
+                      ƒƒ^•¶Žš‚Å‚È‚¢•¶Žšc‚É‘Î‰ž‚·‚éB
+
+                 c
+                      •¶Žšc‚É‘Î‰ž‚·‚éB
+
+                 .
+                      (•œ‰üˆÈŠO‚Ì)”CˆÓ‚Ì•¶Žš‚É‘Î‰ž‚·‚éB
+
+                 ^
+                      s“ª‚Ü‚½‚Í•¶Žš—ñ‚Ìæ“ª‚É‘Î‰ž‚·‚éB
+
+                 $
+                      s––‚Ü‚½‚Í•¶Žš—ñ‚ÌI‚í‚è‚É‘Î‰ž‚·‚éB
+
+                 [abc...]
+                      •¶ŽšƒNƒ‰ƒXB•¶Žš abc... ‚Ì‚Ç‚ê‚©‚É‘Î‰ž‚·‚éB
+
+                 [^abc...]
+                      •¶ŽšƒNƒ‰ƒX‚Ì”½“]B•¶Žš abc... ‚¨‚æ‚Ñ•œ‰ü•¶ŽšˆÈŠO‚Ì”CˆÓ‚Ì
+                      •¶Žš‚É‘Î‰ž‚·‚éB
+
+                 r1|r2
+                      “ñŽÒ‘ðˆêB³‹K•\Œ» r1 ‚Ü‚½‚Í r2 ‚É‘Î‰ž‚·‚éB
+
+                 r1r2
+                      ˜AŒ‹B³‹K•\Œ» r1 ‚ÌŒã r2 ‚É‘Î‰ž‚·‚éB
+
+                 r+
+                      1 ŒÂˆÈã‚Ì³‹K•\Œ» r ‚Ì”½•œ‚É‘Î‰ž‚·‚éB
+
+                 r*
+                      0 ŒÂˆÈã‚Ì³‹K•\Œ» r ‚Ì”½•œ‚É‘Î‰ž‚·‚éB
+
+                 r?
+                      1 ŒÂˆÈ‰º‚Ì³‹K•\Œ» r ‚Ì”½•œ‚É‘Î‰ž‚·‚éB
+
+                 (r)
+                      ƒOƒ‹[ƒsƒ“ƒOB³‹K•\Œ» r ‚É‘Î‰ž‚·‚éB
+
+
+    @ŒŸõ‚ÍAuðŒ‚ðŽw’è‚µ‚½v‚·‚×‚Ä‚ÌƒtƒB[ƒ‹ƒh‚É‚Â‚¢‚Ä‚ÌðŒ‚ª¬—§‚µ‚½ê‡
+    ‚É^‚Æ‚Ý‚È‚³‚ê‚Ü‚·Bi‚·‚È‚í‚¿ƒtƒB[ƒ‹ƒhŠÔ‚Í AND ðŒ‚É‚È‚è‚Ü‚·Bj
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 11 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+________________________________________________________________________________
+
+yŽæ‚èˆµ‚¤ƒf[ƒ^ƒtƒ@ƒCƒ‹‚ÌŒ`Ž®z
+________________________________________________________________________________
+
+    @EPH ver1.20 ‚Å‚ÍˆÈ‰º‚ÌƒtƒH[ƒ}ƒbƒg‚Ìƒf[ƒ^ƒtƒ@ƒCƒ‹‚ðˆµ‚¤‚±‚Æ‚ª‚Å‚«‚Ü‚·B
+    ‚±‚ê‚ç‚Í‚·‚×‚Ä DOS ‚ÌƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚Å‚·‚Ì‚ÅAƒeƒLƒXƒgƒGƒfƒBƒ^‚Å‚à•ÒW‚·‚é
+    ‚±‚Æ‚ª‚Å‚«‚Ü‚·B
+    @‚Ü‚½ ver1.10 ‚Ü‚Å‚Íƒtƒ@ƒCƒ‹‚ÌI‚è‚É ^Z ‚ª‚Â‚¢‚Ä‚¢‚éƒtƒ@ƒCƒ‹‚Í“Ç‚Þ‚±‚Æ‚ª‚Å
+    ‚«‚Ü‚¹‚ñ‚Å‚µ‚½‚ªAver1.20 ‚©‚ç‚Í‰Â”\‚É‚È‚è‚Ü‚µ‚½B‚½‚¾‚µAEPH ‚É‚æ‚Á‚Ä‘‚«
+    o‚³‚ê‚éƒtƒ@ƒCƒ‹‚É‚Í ^Z ‚Í‚Â‚«‚Ü‚¹‚ñB
+    @‚È‚¨AUNIX ‚Ìê‡A•’Ê‚ÌƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚Í Delimiter ‚Í LF ‚Ì‚Ý‚Å‚·‚ªA
+    EPH ‚Å‚Í¡‚Ì‚Æ‚±‚ë DOS ‚Æ“¯‚¶‚æ‚¤‚É CR+LF ‚µ‚©ˆµ‚¦‚Ü‚¹‚ñB
+    @DOS ‚©‚çƒf[ƒ^ƒtƒ@ƒCƒ‹‚ð“]‘—‚µ‚½‚è‚·‚éê‡‚É‚ÍƒoƒCƒiƒŠƒtƒ@ƒCƒ‹‚Æ‚µ‚Äˆµ‚¤
+    ‚È‚Ç‚Ì’ˆÓ‚ª•K—v‚Å‚·B
+
+    @ver1.20 ‚Å‚Í¬˜f¯‚Ì‹O“¹—v‘fƒtƒ@ƒCƒ‹‚ÌƒtƒH[ƒ}ƒbƒg‚ªˆÈ‘O‚Ì”Å‚Æˆá‚Á‚Ä‚¢‚Ü
+    ‚·B‚È‚¨‹Œ”Å‚Ìƒtƒ@ƒCƒ‹‚àA“Ç‚Ýž‚Ý‚Ì‚Ý‰Â”\‚Æ‚È‚Á‚Ä‚¢‚Ü‚·B
+
+    A. Comet
+
+    1. CCO compatible (Dr.Marsden's Comet catalogue) --- Read Only
+      =====================================================================
+        column   length   type   content
+      ---------------------------------------------------------------------
+         1 -  10    10    Char   Roman numeral designation
+        12 -  26    15    Date   perihelion time
+        29 -  36     8    Num    perihelion distance
+        39 -  46     8    Num    eccentricity
+        48 -  52     5    Num    period
+        55 -  62     8    Num    argument of perihelion(B1950.0)
+        65 -  72     8    Num    longitude of ascending node(B1950.0)
+        75 -  82     8    Num    inclination (B1950.0)
+        85 -  94    10    Date   osculation epoch
+        96 - 100     5    Num    No. of observations/indicated correction
+       101           1           nongravitational forces
+       104 - 126    23    Char   time span of observations
+       128           1    Num    No. of planets
+       131 - 132     2    Char   last figure of year and letter designation
+       133 - 160    28    Char   name (P/ signifies a short-period comet)
+       161 - 162     2    Ctrl   Delimiter(CR/LF)
+      =====================================================================
+
+    2. EPH file  --- Read / Write
+      =====================================================================
+        column   length   type   content
+      ---------------------------------------------------------------------
+         1 - 160   160@  almost compatible to CCO format
+       161           1    Char   Delete flag
+       162 - 166     5    Num    h1
+       167 - 171     5    Num    k1
+       172 - 176     5    Num    h2
+       177 - 181     5    Num    k2
+       182 - 255    74    Char   comment
+       256 - 257     2    Ctrl   Delimiter(CR/LF)
+      =====================================================================
+
+
+                                      - 12 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+
+
+    B. Minor Planet
+
+    1. EPH file (old long)     --- Read Only
+      =====================================================================
+        column   length   type   content
+      ---------------------------------------------------------------------
+         1 -   5     5    Num    Number
+         6           1    Char   ---
+         7 -  23    17    Char   Name of minor planet
+        24 -  32     9    Date   Epoch
+        33 -  38     6    Num    H
+        39 -  44     6    Num    G
+        45 -  54    10    Num    M
+        55 -  64    10    Num    peri.
+        65 -  74    10    Num    node
+        75 -  84    10    Num    incl.
+        85 -  94    10    Num    e
+        95 - 105    11    Num    n
+       106 - 116    11    Num    a
+       117           1    Char   delete flag
+       118 - 160    43    Char   comment
+       161 - 162     2    Ctrl   Delimiter(CR/LF)
+      =====================================================================
+
+    2. IAU compatible format --- Read Only
+      =====================================================================
+        column   length   type   content
+      ---------------------------------------------------------------------
+         1 -   5     5    Num    Number(column 5 is usually space)
+         6 -  12     7    Num    H
+        13 -  21     9    Num    M
+        23 -  31    10    Num    peri.
+        32 -  41    10    Num    node
+        42 -  50     9    Num    incl.
+        51 -  60    10    Num    e
+        61 -  71    11    Num    n
+        72 -  82    11    Num    a
+        83 -  88     6    Num    G
+        89 -  96     8    Date   Epoch (YYYY type year is also available)
+        97 - 106    10    Char   Reference
+       1077 - 108     2    Ctrl   Delimitor(CR/LF)
+      =====================================================================
+
+    3. EPH format (IAU extended)   --- Read / Write
+      =====================================================================
+        column   length   type   content
+      ---------------------------------------------------------------------
+         1 - 108          same as IAU format
+       109           1    Char   delete flag
+       110 - 139    30    Char   name
+       140 - 192    53    Char   comment
+       193 - 194     2    Ctrl   Delimiter(CR/LF)
+      =====================================================================
+
+
+
+                                      - 13 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+________________________________________________________________________________
+
+y¡Œã‚ÌŠó–]z
+________________________________________________________________________________
+
+        1) ‹O“¹—v‘f‚ÌŒŸõ‰æ–Ê‚Æ•ÒW‰æ–ÊAfiler ‚Í“‡‚µ‚½‚¢B
+            @‚¢‚Ü‚Ì‘€ì‚Ì—¬‚ê‚Í‚¿‚å‚Á‚Æ•sŽ©‘R‚ÈŠ´‚¶‚ª‚·‚é‚Ì‚ÅA‚à‚¤­‚µ‹O“¹—v
+            ‘f•ÒWAŒŸõAŒvŽZA‹O“¹—v‘f‚Ìƒtƒ@ƒCƒ‹‚Ö‚Ì•Û‘¶‚ÌŠÔ‚Ì—¬‚ê‚ðƒXƒ€[ƒY
+            ‚É‚µ‚½‚¢B
+
+        2) ‹O“¹—v‘f‚Ì—LŒø”Žš‚Ì–â‘è‚ð‰ðŒˆ‚µ‚½‚¢B
+
+        3) ‰ž“šƒtƒ@ƒCƒ‹‚Ì‚æ‚¤‚È‚à‚Ì‚ðŽg‚Á‚ÄAƒƒjƒ…[‚ð‘€ì‚µ‚È‚­‚Ä‚àiƒoƒbƒ`“I
+            ‚Éj•K—v‚Èo—Í‚ð“¾‚ç‚ê‚é‚æ‚¤‚É‚à‚µ‚½‚¢B
+
+        4) ŠÂ‹«Ý’èƒtƒ@ƒCƒ‹‚ÍƒeƒLƒXƒg‰»‚µ‚½‚¢B
+            @‚Ü‚½ŠÂ‹«ƒtƒ@ƒCƒ‹‚ð•¡”Ø‚è‘Ö‚¦‚È‚ª‚çŽg—p‚Å‚«‚é‚æ‚¤‚É‚µ‚½‚¢B
+
+
+
+
+________________________________________________________________________________
+
+y‚±‚ê‚Ü‚Å‚Ìƒo[ƒWƒ‡ƒ“—š—ð‚ÆŽå‚È•ÏX“_z
+________________________________________________________________________________
+
+    ™@ver0.7 : 1988/04/28
+    @@@ž@7 Œ…¸“x‘¾—zÀ•W
+    @@@ž@ÔŒoEÔˆÜA’nS‹——£A“úS‹——£AŒõ“xA‘¾—z‚©‚ç‚Ì—£Šp‚Ìo—Í
+
+    ™@ver0.9iŽb’è”Åj: 1988/07/28
+    @@@ž@•ª“_•ÏŠ·A“úX‰^“®A‚“xE•ûˆÊA”öAˆÊ‘ŠŠpAŒŽ—îAŽ‹·•â³‚Ì’Ç‰Á
+    @@@ž@–Ú“I“V‘Ì‚Ìƒtƒ@ƒCƒ‹‚©‚ç‚ÌŽ©“®ŒŸõ‹@”\‚ðƒTƒ|[ƒg
+    @@@ž@ƒf[ƒ^ƒtƒ@ƒCƒ‹‚Ì“üo—Í‚ðƒTƒ|[ƒg
+    @@@ž@Å“KŠÏ‘ªŽž‚ÌŽ©“®ŒvŽZ‹@”\‚ÌƒTƒ|[ƒg
+    @@@ž@“¯’èƒ‹[ƒ`ƒ“‚ð’Ç‰Á
+    @@@ž@ƒEƒBƒ“ƒhƒEEƒƒjƒ…[•ûŽ®‚Ì‘€ì‰æ–Ê
+
+    ™@ver1.0 : 1989/05/24
+    @@@ž@ŒvŽZŒ‹‰Ê‚Ìƒtƒ@ƒCƒ‹‚¨‚æ‚ÑƒvƒŠƒ“ƒ^‚Ö‚Ìo—Í‚ð‰Â”\‚É‚µ‚½B
+    @@@ž@Daily motion ŒvŽZ•û–@‚Ì•ÏXi‘O“ú‚Æ‚Ì·¨—‚“ú‚Æ‚Ì·j
+    @@@ž@Motion & Position Angle ‚Ìo—Í‚ð’Ç‰Á
+    @@@ž@Variation ‚Ìo—Í‚ð’Ç‰Á
+    @@@ž@ƒƒgƒJ[ƒt–@ŒW”‚Ìo—Í‚ð’Ç‰Á
+    @@@ž@’n‹…|œa¯‚Ì”ö‚Ì‚È‚·Šp‚Ìo—Í‚ð’Ç‰Á
+    @@@ž@œa¯‚©‚ç‚Ý‚½‘¾—z–ÊŒoˆÜ“x‚Ìo—Í‚ð’Ç‰Á
+    @@@ž@‚‘¬ŠÈˆÕ‘¾—zÀ•Wƒ‹[ƒ`ƒ“‚Ì’Ç‰Á
+    @@@ž@Å“KŠÏ‘ªŽž‚ÌŽ©“®ŒvŽZ‚Ì‚‘¬‰»
+    @@@ž@¬˜f¯‚ÌŒõ“x‚ÍŠáŽ‹“™‹‰‚ÆŽÊ^“™‹‰‚Ì—¼•û‚ðƒTƒ|[ƒg
+    @@@ž@“¯’èƒ‹[ƒ`ƒ“‚Ì‰ü—Ç
+    @@@ž@DeAN ‚Ö‚Ì“¯’èŒ‹‰Ê‚Ìo—Í
+    @@@ž@ƒ‰ƒCƒuƒ‰ƒŠŒŸõ‚Æ¸×‚ÈŠeŽí‹O“¹—v‘fƒf[ƒ^‚Ìo—Í‚ðƒTƒ|[ƒg
+    @@@ž@œa¯E¬˜f¯ƒtƒ@ƒCƒ‹‚ÌƒtƒH[ƒ}ƒbƒg•ÏXi‚È‚¨•ÏŠ·—p‚Ì awk ƒv
+    @@@@@ƒƒOƒ‰ƒ€‚ð“Y•t‚µ‚½j
+    @@@ž@ŠÂ‹«Ý’èƒtƒ@ƒCƒ‹‚Ì“±“üiŠÂ‹«•Ï”‚É‚æ‚éƒfƒBƒŒƒNƒgƒŠŽw’è‚à‰Âj
+    @@@ž@ƒJ[ƒ\ƒ‹•\Ž¦E”ñ•\Ž¦§Œä‚Ì—}§‚ð‰Â”\‚É‚µ‚½
+
+
+                                      - 14 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+    @@@ž@ˆÊ’u„ŽZ‚Ì“r’†Œ‹‰Ê‚ðƒoƒbƒtƒ@ƒŠƒ“ƒO‚·‚é‚±‚Æ‚ÅŽŽsŒvŽZŽž‚ÌŒJ‚è
+    @@@@@•Ô‚µ‚Ì‚‘¬‰»
+    @@@ž@ƒVƒFƒ‹ƒGƒXƒP[ƒv‚ð‰Â”\‚É‚µ‚½
+    @@@ž@‹O“¹—v‘fƒtƒ@ƒCƒ‹‚ÉƒRƒƒ“ƒg‚ðŽ‚½‚¹‚ç‚ê‚é‚æ‚¤‚É‚µ‚½
+    @@@ž@@@@V@@@@‚ÌƒŒƒR[ƒh‚ðíœE•œŠˆ‚³‚¹‚ç‚ê‚é‚æ‚¤‚É‚µ‚½
+    @@@ž@ƒEƒBƒ“ƒhƒEEƒƒjƒ…[•ûŽ®‚Ì‘S–Ê“I‚È‰ü—ÇA‘€ì«‚ðŒüã‚³‚¹‚½
+
+    ™@ver1.1 : 1989/12/27
+    @@@ž@ƒ‰ƒCƒuƒ‰ƒŠŒŸõ‚ÌŠe‹O“¹—v‘f‚Ì”ÍˆÍ‚ðÝ’è‚Å‚«‚é‚æ‚¤‚É‚µ‚½B
+    @@@ž@ƒ‰ƒCƒuƒ‰ƒŠŒŸõ‚Å—¬¯oŒ»—\•ñ‚ðo‚¹‚é‚æ‚¤‚É‚µ‚½B
+    @@@ž@ˆÊ’u„ŽZŽžAŠÏ‘ª’n‚ÌÝ’è‚ð•ÏX‚µ‚Ä‚àÄŒvŽZ‚µ‚È‚¢ƒoƒO‚ð fixB
+    @@@ž@“¯’è‚Í•K‚¸Ž‹·•â³‚ð‚·‚é‚æ‚¤‚É‚µ‚½B
+    @@@ž@ƒƒgƒJ[ƒt–@ŒW”‚Ìo—Í‚ÉŒÂlŒW”‚ð‚©‚¯‚ç‚ê‚é‚æ‚¤‚É‚µ‚½B
+    @@@ž@¯}ƒvƒƒOƒ‰ƒ€ SAE —p‚Ìƒf[ƒ^‚ðo—Í‚Å‚«‚é‚æ‚¤‚É‚µ‚½B
+    @@@ž@“¯’èo—Í’l‚ª‚¨‚©‚µ‚­‚È‚é‚±‚Æ‚ª‚ ‚éƒoƒO‚ð fixB
+    @@@ž@“¯’èo—Í‚ð‚í‚©‚è‚â‚·‚¢‚æ‚¤‚É‘S–Ê‰ü’ù‚µ‚½B
+    @@@ž@“¯’è”ÍˆÍ‚É‚“x‚ð’Ç‰Á‚µ‚ÄAŠÏ‘ª‰Â”\“V‘Ì‚ÌŽ©“®“¯’è‹@”\‚ð’Ç‰Á‚µ‚½B
+    @@@ž@ˆÊ’u„ŽZ‚ÅŒŽ‚Æ‚ÌŠp‹——£‚ðo—Í‚Å‚«‚é‚æ‚¤‚É‚µ‚½B
+    @@@ž@“úX‰^“®‚Ì’l‚ª‘Š“–‘å‚«‚¢Žž‚É•\Ž¦‚ª‰E‚Ö 1 ƒJƒ‰ƒ€‚¸‚ê‚é‚Ì‚ð’ù³B
+    @@@ž@‚Ü‚ê‚ÉˆÊ’u„ŽZ‚Å•\Ž¦Žž‚ªŒ…—Ž‚¿‚·‚éi19h00m ‚ª 18h59m ‚Æ‚È‚éj
+    @@@@@‚Ì‚ðC³B
+
+    ™@ver1.2 : 1991/04/01
+    @@@ƒoƒO FIX ŠÖ˜AB
+    @@@ž@Mot./PA ‚Æ Metcalf ‚ð“¯ŽžŽw’è‚·‚é‚Æ Mot./PA ‚ª‚¨‚©‚µ‚­‚È‚éB
+    @@@ž@ET-UT ‚Ì’l‚ª•Ï‚í‚Á‚Ä‚àÄŒvŽZ‚É‚È‚ç‚È‚©‚Á‚½B
+    @@@ž@œa¯‚Ì“¯’è‚Å‚r‚`‚do—Í‚ð‚·‚é‚Æƒwƒbƒ_[‚Ì à?' " ‚Ì‚Æ‚±‚ë‚ª‚¸‚ê‚éB
+    @@@ž@ŒvŽZŠÔŠu‚ð time ‚Å‚Æ‚é‚ÆŠÔŠu‚ÌÝ’è‚ÌŽž‚ÉÅ‰‚É•b‚ÌŒ…‚Ìƒ[ƒ‚ªˆê‚Â
+    @@@@@‘½‚­•\Ž¦‚³‚ê‚éB
+    @@@ž@ˆÊ’u„ŽZ‚Å¸–§ˆÊ’u•\Ž¦‚É‚·‚é‚ÆŽž‚Ì•b‚ª 00s ‚Æ‚È‚ç‚¸‚É  0s ‚Æ‚È‚éB
+    @@@ž@“¯’è‚Ì‹O“¹—v‘f‚Ì”ÍˆÍÝ’è‚ÅAa ‚â P ‚ÌÅ‘å’l‚ð‘å‚«‚­‚µ‚½‚Ì‚Å
+    @@@@@¬‚³‚¢’l‚Ì“ü—Í‚ÌŽž‚Å‚à¬”“_ 1 Œ…‚Ü‚Å‚µ‚©‚Å‚«‚È‚¢B¬”“_‚ÌˆÊ’u‚¸‚êB
+    @@@ž@Žž•\Ž¦‚ÌŒ…—Ž‚¿‚ð’¼‚µ‚½‚Â‚à‚è‚ª’¼‚Á‚Ä‚¢‚È‚©‚Á‚½B
+
+    @@@Žd—l•ÏXB
+    @@@ž@“ü—Í‹O“¹—v‘f‚à 2000 ”N•ª“_‘Î‰žB
+    @@@ž@¬˜f¯‚Ìƒf[ƒ^ƒtƒ@ƒCƒ‹‚ð IAU format ƒx[ƒX‚É
+    @@@ž@termcap ‚É‚æ‚é‘½‹@Ží‘Î‰ž
+    @@@ž@ƒRƒ“ƒ\[ƒ‹o—Í‚Ì‚‘¬‰»(INT 29H/21H)  --- MS-DOS ”Å
+    @@@ž@-! ƒIƒvƒVƒ‡ƒ“‚ÌˆÓ–¡•ÏXiƒJ[ƒ\ƒ‹‰ÂŽ‹§Œä->INT 29H/21H Ø‚è‘Ö‚¦j
+    @@@ž@o—ÍŽžƒwƒbƒ_[‚ªƒXƒNƒ[ƒ‹‚µ‚È‚¢‚æ‚¤‚ÉŒÅ’è‚µAmore ‹@”\‚ð•t‰ÁB
+    @@@ž@‹O“¹—v‘fƒtƒ@ƒCƒ‹‚ÌƒXƒLƒƒƒ“‚ðŒã•û‚©‚ç‚à‰Â”\‚É‚µ‚½B
+    @@@ž@“ú•tE—j“ú‚Ìo—ÍƒtƒH[ƒ}ƒbƒg‚ð×‚©‚­Ý’è‚Å‚«‚é‚æ‚¤‚É‚µ‚½B
+    @@@ž@ƒtƒ@ƒCƒ‹^ƒvƒŠƒ“ƒ^‚Ö‚Ìo—Í’†‚à‰æ–Ê‚É“¯‚¶‚à‚Ì‚ðo—ÍB
+    @@@ž@^Z ‚ª‚Â‚¢‚½‹O“¹—v‘fƒtƒ@ƒCƒ‹‚Å‚à“Ç‚Ýž‚Ý‚ª‚Å‚«‚é‚æ‚¤‚É‚µ‚½B
+    @@@ž@comment field •\Ž¦^”ñ•\Ž¦‚ÌØ‚è‘Ö‚¦iˆÊ’u‚Í‹O“¹—v‘f‚Ì‚·‚®Œãj
+    @@@ž@ŠÂ‹«Ý’èƒtƒ@ƒCƒ‹‚ª“Ç‚ß‚½‚çƒƒjƒ…[‚ÌƒfƒtƒHƒ‹ƒg‚ð Ephemeris ‚ÉB
+    @@@ž@ƒIƒvƒVƒ‡ƒ“ƒtƒ@ƒCƒ‹‚ÌŒŸõƒpƒXŽw’è‚ð‰Â”\‚É‚µ‚½B
+    @@@ž@ŠeŽí‚ÌƒXƒCƒbƒ`ó‘Ô‚É•ÏX‚ª‚È‚¯‚ê‚Î QIUT ‚Å‚·‚®‚ÉI—¹B
+    @@@ž@“ü—ÍƒtƒB[ƒ‹ƒh‚Ì•ÒW‹@”\‚ð­‚µ‹­‰»B
+    @@@ž@ŒŸõðŒ‚ðƒtƒB[ƒ‹ƒh–ˆ‚ÉÝ’è‚Å‚«‚é‚æ‚¤‚É‚µA•s“™†‚â³‹K•\Œ»‚ð
+              Žg‚¦‚é‚æ‚¤‚É‚µ‚½B
+    @@@ž@ƒƒjƒ…[‚Ìˆê•”‚ð‚P•¶ŽšƒRƒ}ƒ“ƒh‚Å‚à‘I‘ð‰Â”\‚É‚µ‚½B
+    @@@ž@ƒ\[ƒXŒöŠJB
+
+
+
+
+                                      - 15 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+________________________________________________________________________________
+
+y”z•zðŒ‚¨‚æ‚ÑìŽÒ‚Ö‚Ì˜A—•û–@z
+________________________________________________________________________________
+
+    @‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍƒtƒŠ[ƒEƒFƒA‚Å‚·B
+    @”z•z“™‚ÍŒ´‘¥‚Æ‚µ‚Ä–³—¿‚Ås‚í‚êAƒRƒs[AŽg—p‚à–³§ŒÀ‚Å‚·‚ªAìŽÒ‚Í’˜ìŒ 
+    ‚ð•úŠü‚µ‚Ä‚¢‚Ü‚¹‚ñB
+    @Ä”z•z‚³‚ê‚éê‡‚É‚ÍAˆÈ‰º‚ÌðŒ‚ðŽç‚Á‚Ä‰º‚³‚¢BiŠî–{“I‚É“¯«‚Ì GNU Gen
+    eral Public Licence ‚É€‚¶‚Ü‚·Bj
+
+         1) ’˜ìŒ •\Ž¦‚ð•ÏXEíœ‚µ‚È‚¢‚Å‰º‚³‚¢B‚Ü‚½AƒvƒƒOƒ‰ƒ€‚âƒhƒLƒ…ƒƒ“
+        ƒg‚ð•ÏX‚µ‚½‚à‚Ì‚ðŒö•\‚³‚ê‚éê‡A•ÏX‰ÓŠ‚Æ•ÏXŽÒ‚ð–¾‚ç‚©‚É‚µ‚Ä‰º‚³‚¢B
+        ‚Ü‚½ƒvƒƒOƒ‰ƒ€‚Ìê‡A‘Î‰ž‚·‚éƒ\[ƒXƒR[ƒh‚àŒöŠJ‚µ‚Ä‰º‚³‚¢B
+
+         2) •K‚¸–³ž‚Å”z•z‚µ‚Ä‰º‚³‚¢B
+        @‚Ü‚½‚»‚ÌÛ‚É‚Í•K‚¸Œ´”z•zƒpƒbƒP[ƒW‚Æ“¯—l‚Ìƒtƒ@ƒCƒ‹‚ð 1 ƒZƒbƒg‚Æ‚µ‚Ä”z
+        •z‚µ‚Ä‚­‚¾‚³‚¢B
+        @ƒIƒŠƒWƒiƒ‹‚Í LHarc(YoshiŽì) ‚É‚æ‚éƒA[ƒJƒCƒuiê‡‚É‚æ‚Á‚Ä‚ÍŽ©ŒÈ‰ð
+        “€Œ`Ž®j‚Å”z•z‚³‚ê‚Ü‚·‚ªAÄ”z•z‚ÉÛ‚µ‚Ä‚ÍƒA[ƒJƒCƒo‚ð“Á‚É‹K’è‚µ‚Ü‚¹‚ñB
+
+         3) Ä”z•z‚ð§ŒÀ‚µ‚È‚¢‚Å‰º‚³‚¢B‚Ü‚½Ä”z•z‚ð§ŒÀ‚·‚é‚æ‚¤‚È‹K–ñ‚Ì‚ ‚é B
+        BS ‚È‚Ç‚Ö‚Ì“o˜^‚à‚µ‚È‚¢‚Å‰º‚³‚¢B
+
+         4) ‚±‚ÌƒvƒƒOƒ‰ƒ€‚ðŽg—p‚µ‚½‚±‚Æ‚É‚æ‚Á‚Ä¶‚¶‚½‘¹ŠQ‚ÍA‘S‚­•ÛØ‚³‚ê‚Ü‚¹
+        ‚ñB
+
+         5) ìŽÒ‚ÍA‚±‚ÌƒvƒƒOƒ‰ƒ€‚É•s”õ‚ª‚ ‚Á‚Ä‚àA‚»‚ê‚ð’ù³‚·‚é‹`–±‚ð•‰‚¢‚Ü
+        ‚¹‚ñB‚µ‚©‚µ‚È‚ª‚çA‰ü‘P‚Ì“w—Í‚Í‚·‚é‚ÆŽv‚¢‚Ü‚·B
+
+         6) ¬˜f¯Eœa¯‚Ìƒf[ƒ^ƒtƒ@ƒCƒ‹‚ÌŽæˆµ‚É‚Â‚¢‚ÄEPH ver1.20 ‚Å‚ÍA‘º‰ªŒ’
+        Ž¡‚³‚ñ‚Ì‚²ŒúˆÓ‚Å‘º‰ª‚³‚ñ‚ªŒvŽZ‚³‚ê‚½‹O“¹—v‘f‚ð‚Â‚¯‚é‚±‚Æ‚ª‚Å‚«‚Ü‚µ‚½‚ªA
+        ‚±‚ê‚ð‰ü•Ï‚³‚ê‚½‚à‚Ì‚ðÄ”z•z‚·‚é‚±‚Æ‚Í‚²‰“—¶‰º‚³‚¢B
+        @‚Ü‚½A‚²Ž©•ª‚Å“ü—Í‚³‚ê‚½‹O“¹—v‘f‚Ìƒf[ƒ^ƒtƒ@ƒCƒ‹‚ð•t‚¯‚Ä‘æŽOŽÒ‚ÉÄ”z
+        •z‚³‚ê‚éê‡A‚»‚ÌÓ”C‚ÍÄ”z•zŽÒ‚ª•‰‚Á‚Ä‰º‚³‚¢B
+
+         7) ƒ\[ƒXƒR[ƒh‚ÌŽæˆµ‚É‚Â‚¢‚Äƒ\[ƒXƒR[ƒh‚É‚Í GNU ‚ÉŠÖ˜A‚µ‚½‚à‚Ì‚ªŠÜ‚Ü
+        ‚ê‚Ä‚¢‚Ü‚·Biserow Ž‚É‚æ‚é jgawk2.11/less123 ‚ÌƒpƒbƒP[ƒW‚©‚çˆø—p‚µ‚Ä
+        ‚¢‚Ü‚·Bj‚±‚ê‚ç‚Ìˆµ‚¢‚É‚Â‚¢‚Ä‚Í“¯«‚Ì GNU general public licence ‚É€
+        ‚¶‚Ä‚­‚¾‚³‚¢B
+
+    @‚È‚¨‚±‚ÌƒvƒƒOƒ‰ƒ€‚Í Microsoft C compiler ver6.0 ‚ÅƒRƒ“ƒpƒCƒ‹‚³‚ê‚Ä‚¨‚èA
+    “¯ƒRƒ“ƒpƒCƒ‰‚Ìƒ‰ƒ“ƒ^ƒCƒ€ƒ‰ƒCƒuƒ‰ƒŠƒ‹[ƒ`ƒ“‚ðŠÜ‚ñ‚Å‚¢‚Ü‚·B
+
+    @ìŽÒ‚Ö‚Ì˜A—•û–@‚Å‚·‚ªAˆÈ‰º‚ÌŠ‚Éƒ[ƒ‹‚ð‰º‚³‚¢B
+
+    @@’·“c@Œ’‘¾˜Y : NIFTY-Serve     QFG00555(‚j‚…‚Ž‚”)
+
+              §       ŽRŒûŒ§ŽRŒûŽs•ì912-4
+
+
+    @@ŽRª@Œå     : ASCII-Net PCS   pcs20526(‘·Œå‹ó)
+
+              §418    Ã‰ªŒ§•xŽm‹{Žs“c’†’¬568
+
+
+
+
+                                      - 16 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+________________________________________________________________________________
+
+yŽÓŽ«z
+________________________________________________________________________________
+
+    @PC-VAN, NIFTY-Serve, ASCII-Net PCS ‚ÌŠe“V•¶SIG ‚ÌŠF‚³‚ñ‘¼A”ñí‚É‘½‚­‚Ì•û
+    X‚©‚ç—L‰v‚ÈŽ‘—¿‚âƒAƒhƒoƒCƒX‚ð‚¢‚½‚¾‚«‚Ü‚µ‚½B‚±‚±‚É‰ü‚ß‚Ä‚¨—ç\‚µã‚°‚Ü‚·B
+
+    @‚±‚Ìƒo[ƒWƒ‡ƒ“‚Å‚ÍAœa¯‚Ì‹O“¹—v‘fƒf[ƒ^‚Æ‚µ‚Ä‘º‰ªŒ’–èŽ‚ªŒvŽZ‚³‚ê‚½‚à‚Ì
+    ‚ðŽ‚Ì‚²—¹³‚ð“¾‚Ä“Y•t‚³‚¹‚Ä‚¢‚½‚¾‚«‚Ü‚µ‚½B‚±‚Ì‹O“¹—v‘f‚Í‘º‰ªŽ‚ªŽ©‚çƒvƒ
+    ƒOƒ‰ƒ€‚ð‘g‚Ý“ÆŽ©‚ÉŒvŽZ‚³‚ê‚½‚à‚Ì‚ÅAÛ“®‹y‚Ñ”ñd—ÍŒø‰Ê‚ðl—¶‚µ‚½‚à‚Ì‚Å‚·B
+    ‚±‚Ìê‚ðŽØ‚è‚Ä‚¨—ç\‚µã‚°‚Ü‚·B
+
+    @‚Ü‚½A“Á‚É termcap ‘Î‰ž‚ÉÛ‚µ‚ÄAWASAT(pcs30781) Ž‚É‚Í FMR & PS/55 ‚Å‚Ì
+    “®ìƒeƒXƒg‚Ì‘¼A‚±‚ê‚ç‚Ì‹@Ží—p‚Ì termcap ‚Ìì¬‚ð‚µ‚Ä‚¢‚½‚¾‚­‚È‚ÇA‘å•Ï‚É‚¨
+    ¢˜b‚É‚È‚è‚Ü‚µ‚½BŠ´ŽÓ‚¢‚½‚µ‚Ü‚·B
+
+    @‚Ü‚½ GNU awk ‚Ì“ú–{Œê‘Î‰ž”Å‚Å‚ ‚é jgawk 2.11 ‚Ìƒ\[ƒXƒpƒbƒP[ƒW‚æ‚èregex.
+    c, regex.h, alloca.asm ‚ðAless 123 ‚Ìƒ\[ƒXƒpƒbƒP[ƒW‚æ‚ètermcap.c ‚ðˆø—p
+    ‚³‚¹‚Ä‚¢‚½‚¾‚«‚Ü‚µ‚½BiƒvƒŠƒvƒƒZƒbƒT•¶‚Ü‚í‚è‚Ìˆê•”‚ð Turbo C++ ver.1.0 ‚Å
+    ‚àƒRƒ“ƒpƒCƒ‹‚Å‚«‚é‚æ‚¤‚É•ÏX‚µ‚Ü‚µ‚½Bj‚¢‚¸‚ê‚ÌƒpƒbƒP[ƒW‚à serow(pcs1961
+    4) Ž‚Ì”­•\‚É‚æ‚é‚à‚Ì‚Å‚·Bver1.20 ‚Å‚Ì•ÏX“_‚ÍA‚±‚ê‚ç‚ÌƒvƒƒOƒ‰ƒ€‚ÉˆË‚é‚Æ
+    ‚±‚ë‘å‚Å‚·BìŽÒ‚Ì•ûX‚É[‚­Š´ŽÓ‚¢‚½‚µ‚Ü‚·B
+
+    @‚»‚Ì‘¼‚É‚àA‚±‚ÌƒvƒƒOƒ‰ƒ€ì¬’†A‰Æ’ë‚ð‚àÈ‚Ý‚¸‚É”M’†‚·‚é•v‚ð”l“|‚·‚éŽ–
+    ‚È‚­(?)Œ©Žç‚Á‚Ä‚­‚ê‚½È‚Í‚¶‚ßA‚ ‚Ü‚è‚©‚Ü‚Á‚Ä‚â‚ê‚È‚©‚Á‚½i‚¤‚»B‚Ü‚Æ‚í‚è‚Â
+    ‚¢‚ÄŽ×–‚‚µ‚Ä‚­‚ê‚½B;-)jŽq‹Ÿ‚½‚¿‚É‚àŠ´ŽÓ‚µ‚½‚¢‚ÆŽv‚¢‚Ü‚·B
+
+
+    @‚È‚¨A‚±‚Ìƒ}ƒjƒ…ƒAƒ‹ì¬‚É‚ ‚½‚Á‚Ä‚Í syoheiŽEvoid_No.2 Ž‚ç‚ÌƒeƒLƒXƒgE
+    ƒtƒH[ƒ}ƒbƒ^ fin.exe ‚ð—˜—p‚³‚¹‚Ä‚¢‚½‚¾‚«‚Ü‚µ‚½B
+    @‚±‚±‚ÉŠ´ŽÓ‚µ‚Ü‚·B
+
+
+
+
+________________________________________________________________________________
+
+yŽQl•¶Œ£z
+________________________________________________________________________________
+
+        1) “n•Ó•q•vF”—“V•¶ŠwAP¯ŽÐ(1959).
+        2) ’·’Jìˆê˜YF“V‘Ì‹O“¹˜_AŽ©”ïo”Å(1969).
+        3) Brian G. Marsden:Catalogue of Cometary Orbits (2nd Edition),(1975).
+        4) ’·’Jìˆê˜YF“V•¶ŒvŽZ“ü–åAP¯ŽÐ(1978).
+        5) '78, '79 œa¯‰Ä‚ÌŠwZŽû˜^.
+        6) ’·’Jìˆê˜YF“V‘Ì‹O“¹˜_AP¯ŽÐ(1983).
+        7) ’†–ìŽåˆêFƒ}ƒCƒRƒ““V•¶Šw‚hAP¯ŽÐ(1983).
+        8) –xŒ¹ˆê˜Y@•ÒF“V•¶ŒvŽZƒZƒ~ƒi[AP¯ŽÐ(1984).
+        9) ’·‘ò@HF“V‘Ì‚ÌˆÊ’uŒvŽZi‘•â”ÅjA’nl‘ŠÙ(1985).
+       10) Brian G. Marsden:Catalogue of Discoveries and Identifications of
+           Minor Planets (2nd Edition),(1986).
+       11) Brian G. Marsden:Catalogue of Orbits of Unnumbered Minor Planets
+            (2nd Edition),(1986).
+       12) Brian G. Marsden:Catalogue of Cometary Orbits (5th Edition),(1986).
+       13) º˜a 63”N“x“V‘ÌˆÊ’u•\AŠCã•ÛˆÀ’¡…˜H•”.
+
+
+                                      - 17 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+       14) Ephemerides of Minor Planets for 1988.
+       15) ICQ:1988 COMET HANDBOOK.
+       16) ’·’Jìˆê˜YEŒÃìêiˆê˜YE’†–ìŽåˆêF1950 ”N•ª“_(B1950) ‚Ì‘¾—zÔ“¹
+           ’¼ŠpÀ•W(12)A“VŠEA752,11(1988).
+       17) haru-k & D-TANAFDeAN(Desktop Astro Navigator) ƒ}ƒjƒ…ƒAƒ‹.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 18 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+________________________________________________________________________________
+
+y‚¨‚í‚è‚Éz
+________________________________________________________________________________
+
+    @‚È‚ñ‚¾‚©‚ñ‚¾‚Å‚à‚¤ 3 ”NˆÈã‚à‚±‚ÌƒvƒƒOƒ‰ƒ€‚ð‚¢‚¶‚è‰ñ‚µ‚Ä‚«‚Ü‚µ‚½BŠî–{\
+    ‘¢‚Í ver1.0 ‚Ì‚Ü‚Ü‚È‚Ì‚ÅAì‚è’¼‚µ‚½‚¢•”•ª‚à‘½X‚ ‚è‚È‚ª‚çAŒ‹‹Ç‚»‚Ì‚Ü‚Ü‚¾
+    ‚Á‚½‚è‚à‚µ‚Ü‚·B
+    @¡‰ñ‚Íƒ\[ƒX‚àŒöŠJ‚µ‚Ü‚·‚ªA‚±‚ÌŽ–‚Åˆê‘w EPH ‚ªˆç‚Á‚Ä‚­‚ê‚ê‚Î‚¢‚¢‚ÈA‚ÆŠè
+    ‚Á‚Ä‚¢‚Ü‚·B
+
+    ‰½‚Í‚Æ‚à‚ ‚êAEPH ‚ª EPH ‚ð•K—v‚Æ‚µ‚Ä‚¢‚él‚ÌŽèŒ³‚É“Í‚«‚Ü‚·‚æ‚¤‚ÉB‚»‚µ‚ÄA
+    –ð‚É‚½‚ÂƒvƒƒOƒ‰ƒ€‚Å‚ ‚è‚Ü‚·‚æ‚¤‚ÉB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 19 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+________________________________________________________________________________
+
+y•t˜^ A: ‘¾—zÀ•W‚É‚Â‚¢‚Äz
+________________________________________________________________________________
+
+
+    @‘¾—zÀ•W‚ÍŠî–{“I‚É‚Í‘¾—z‚Ì“V‹…ã‚Å‚ÌˆÊ’u‚ð•\‚í‚·‚à‚Ì‚Å‚·B‚Æ“¯Žž‚ÉA‘¾—z
+    Œn‚É‚¨‚¯‚é’n‹…‚ÌÀ•W‚ð‚àŽ¦‚·‚à‚Ì‚Æ‚È‚è‚Ü‚·B‚µ‚½‚ª‚Á‚ÄA‘¾—z‚ÌˆÊ’u‚â’n‹…|
+    ‘¾—zŠÔ‚Ì‹——£‚ð’m‚é‚Ì‚Ý‚Å‚È‚­A˜f¯‚â‘¾—zŒn“à”÷¬“V‘Ìiœa¯E¬˜f¯E—¬¯“™j
+    ‚ÌˆÊ’u„ŽZ‚â‹O“¹Œˆ’è‚É‚Í‚È‚­‚Ä‚Í‚È‚ç‚È‚¢‚à‚Ì‚Å‚·B
+
+    @‘¾—zÀ•W‚ÌŒvŽZ‚É‚ÍAS.Newcomb:Table of the Motion of the Earth on its Ax
+    is and around the Sun(1895) ‚ª 100 ”N‹ß‚­Žg‚í‚ê‚Ä‚«‚Ü‚µ‚½B‚±‚ê‚É‚ÍA—˜_‚Æ
+    ŠÏ‘ª‚ÉŠî‚Ã‚¢‚½…¯‚©‚ç“y¯‚Ü‚Å‚ÆŒŽ‚É‚æ‚éÛ“®“™‚ªŠÜ‚Ü‚ê‚Ä‚¢‚Ü‚·B‚Ü‚½AŠCã
+    •ÛˆÀ’¡…˜H•”‚ª‰ü³‚µ‚½‚à‚Ì‚ªA 1980-1984 ”N‚Ü‚Å‚Ì“V‘ÌˆÊ’u•\‚ÅŽg‚í‚ê‚Ä‚¢‚Ü‚µ
+    ‚½B‚»‚Ì‚Ù‚©‚ÉA”‘½‚­‚ÌŠÈˆÕŽ®‚à’m‚ç‚ê‚Ä‚¢‚Ü‚·B
+
+    @Newcomb ‚Ì•û–@‚ÍA‘½”‚ÌŽOŠpŠÖ”‚ðŠÜ‚Þ“WŠJŽ®‚ÌŒvŽZ‚Å‚·B‚µ‚½‚ª‚Á‚ÄŒvŽZ‚É
+    ŽžŠÔ‚ª‚©‚©‚é‚½‚ßAˆÈ‘O‚Í”N•\“™‚Ì•\‚©‚ç•âŠÔ‚µ‚Ä‹‚ß‚Ä‚¢‚Ü‚µ‚½‚ªAƒp[ƒ\ƒiƒ‹
+    ƒRƒ“ƒsƒ…[ƒ^[‚Ì•‹y‚É‚Æ‚à‚È‚¢AŒÂl‚Å‚à‚í‚¸‚©‚ÌŽžŠÔ‚Å‹‚ß‚½‚¢“úŽž‚Ì’l‚ðŒv
+    ŽZ‚·‚é‚±‚Æ‚ª‚Å‚«‚é‚æ‚¤‚É‚È‚è‚Ü‚µ‚½B
+    @‚µ‚©‚µANewcomb ‚Ìƒf[ƒ^‚Í 1 ¢‹I‚à‘O‚Ì‚à‚Ì‚Å‚ ‚èŒ³Šú‚©‚ç‘Š“–Œo‰ß‚µ‚Ä‚à‚¢
+    ‚é‚Ì‚ÅA‰ü—Ç‚ð‰Á‚¦‚Ä‚à‚¢‚¸‚êŒë·‚ª‘å‚«‚­‚È‚é‚Ì‚Í–Æ‚ê‚È‚¢‚Å‚µ‚å‚¤B‚»‚±‚ÅA
+    1984 ”N‚Ì“V‘Ì—ï‚Ì‰ü’ù‚ðŠú‚ÉA‘¾—zÀ•W‚ÌŒvŽZ‚Í”’lÏ•ª‚Ì‚Ð‚Æ‚Â‚Ì‰ð‚Æ‚µ‚Ä‹‚ß
+    ‚é‚æ‚¤‚É‚È‚è‚Â‚Â‚ ‚è‚Ü‚·B
+    @—á‚¦‚ÎAŠCã•ÛˆÀ’¡…˜H•”‚Ì“V‘ÌˆÊ’u•\‚Å‚ÍA IAUC1976 “V•¶’è”Œn‚Æ JPL ‚Ì 
+    DE118/LE62 “™‚ðŽg—p‚µA‘¾—zŒn 15 “V‘Ì‚Ì‘Š‘Î˜_‚ÉŠî‚Ã‚­‰^“®•û’öŽ®‚ð”’lÏ•ª‚É
+    ‚æ‚Á‚Ä“¯Žž‚É‰ð‚¢‚Ä‚¢‚Ü‚·B‚µ‚©‚µA”’lÏ•ª–@‚ÍŠe‘‚É‚æ‚èŒvŽZ•û–@‚âƒf[ƒ^‚ª
+    ˆÙ‚È‚èA DE ‚Æ IAUC1976 “V•¶’è”Œn‚Ì’l‚à‹Í‚©‚ÉˆÙ‚È‚é“™A‚Ü‚¾–â‘è‚à‘½‚¢‚æ‚¤
+    ‚Å‚·B‚Ü‚½A”’lÏ•ª‚Å‚Í‘¾—zÀ•W‚¾‚¯‚ðŒvŽZ‚·‚é‚±‚Æ‚Í‚Å‚«‚¸A“Á’è‚Ì“úŽž‚Ì’l
+    ‚ð‚·‚®‚Éo‚·‚Æ‚¢‚¤‚í‚¯‚É‚à‚¢‚«‚Ü‚¹‚ñB‚µ‚½‚ª‚Á‚ÄAƒp[ƒ\ƒiƒ‹ƒRƒ“ƒsƒ…[ƒ^[
+    ‚Å‚¢‚¿‚¢‚¿ŒvŽZ‚µ‚½‚¢ê‡‚É‚ÍŽžŠÔ‚ª‚©‚©‚è‚·‚¬‚é‚Å‚µ‚å‚¤i‚à‚Á‚Æ‚àAŽÀÛ‚ÌŒv
+    ŽZ‚Å‚Í—\‚ßŒvŽZ‚µ‚Ä‚¨‚¢‚½‘Sƒf[ƒ^‚ð‘å—e—Ê‚ÌƒfƒBƒXƒN‚É•Û‘¶‚µA‚»‚ê‚ð“Ç‚Ý‚¾‚µ
+    ‚Ä•âŠÔ‚Å‹‚ß‚Ä‚¢‚­‚Ì‚Å‚µ‚å‚¤‚ªEEEjB’·’Jìæ¶‚©‚ç‚ÌŽ„M‚É‚æ‚é‚ÆA¬˜f
+    ¯Eœa¯‚Å‚Í Newcomb ‚Ì•û–@‚ÅŒ»Ý‚Ì‚Æ‚±‚ë‚Í\•ª‚Å‚ ‚é‚Æ‚Ì‚±‚Æ‚Å‚µ‚½B
+    @Newcomb ‚Ì•û–@‚Æ“V‘ÌˆÊ’u•\‚Ì”’lÏ•ª–@‚Æ‚Å‚ÍAŒ»Ý‚ÌŽž“_‚ÅÔ“¹’¼ŠpÀ•W‚É
+    ‚µ‚ÄÅ‘å‚Å 0.000004 ‚­‚ç‚¢‚Ì·‚ª‚ ‚è‚Ü‚·B‚Ü‚½AŒvŽZ•û–@‚Ì•ÏX‚É‚Æ‚à‚È‚¢A
+    •ÏXŽž“_‚Å•s˜A‘±•”•ª‚ª¶‚¶‚é‚±‚Æ‚É‚È‚é‚Ì‚Å’ˆÓ‚ª•K—v‚Å‚·B
+
+    @Œ»Ý“ú–{‚ÅŽs”Ì‚³‚ê‚Ä‚¢‚é”N•\“™‚É‚Â‚¢‚Ä‚àA“¯‚¶•ª“_‚Å‚©‚È‚è’l‚ªˆÙ‚È‚Á‚Ä‚¢
+    ‚é‚Ì‚Í–â‘è‚Å‚·B—á‚¦‚ÎA 1989 ”N”Å‚Ì“V•¶”NŠÓi…˜H•”‚Ì”’lÏ•ª–@j‚Æ“V•¶ŠÏ
+    ‘ª”N•\i“Œ‹ž“V•¶‘äF‘Š”n@[ANewcomb ‚Ì•û–@Hj‚Å‚ÍA“¯‚¶ B1950.0 •ª“_‚Å‚ 
+    ‚é‚É‚à‚©‚©‚í‚ç‚¸A‚©‚È‚è·‚ª¶‚¶‚Ä‚¢‚Ü‚·B‚Ü‚½A“V•¶”NŠÓ‚ÍˆÈ‘O‚Í’†–ìŽåˆêŽ
+    ‚É‚æ‚é‚à‚Ìi Newcomb ‚Ì•û–@j‚Å‚µ‚½‚ªA1986 ”N‚©‚ç…˜H•”‚Ì’li”’lÏ•ª–@j
+    ‚É•ÏX‚µ‚Ä‚¢‚é‚Ì‚ÅA•s˜A‘±•”•ª‚ª‘¶Ý‚µ‚Ä‚¢‚Ü‚·B
+
+    @“ú–{‚ÅŽs”Ì‚³‚ê‚Ä‚¢‚é‚»‚Ì‚Ù‚©‚Ì“V‘Ì—ï‚Æ‚µ‚Ä‚ÍA
+
+    @@@“Œ‹ž“V•¶‘ä•ÒF—‰È”N•\
+    @@@@@¸“x‚Í 1 Œ…—Ž‚Æ‚µ‚Ä‚ ‚éBŒvŽZ•û–@‚Í•s–¾B
+
+    @@@’†–ì@ŽåˆêA‘¾“cŒ´@–¾F“V‘ÌŠÏ‘ª¯•\2000
+    @@@@@Newcomb ‚Ì•û–@B 2000.0 •ª“_‚É‚µ‚½‚à‚ÌB
+
+    ‚ª‚ ‚è‚Ü‚·B
+    @‚Ü‚½A OAA ‚Ì“VŠE‚ÉŒÃìæ¶‚ª Newcomb ‚Ì‰ü—Ç–@‚ðƒvƒƒOƒ‰ƒ€‚³‚êA“Œ‹ž“V•¶
+
+
+                                      - 20 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+    ‘ä‚Ì FACOM-380R ‚ÅŒvŽZ‚³‚ê‚½Ô“¹’¼ŠpÀ•W‚Ì’l‚ªŽ¦‚³‚ê‚Ä‚¢‚Ü‚·B
+
+    @Ž©•ª‚ÅŒvŽZ‚ð‚µ‚Ä‚Ý‚½‚¢‚ÆŽv‚í‚ê‚é•û‚ÍANewcomb ‚Ì•û–@‚Ì N88-BASIC ”Å‚ª’†–ì
+    ŽåˆêŽ’˜uƒ}ƒCƒRƒ““V•¶Šw‚hv‚ÉŒfÚ‚³‚ê‚Ä‚¢‚Ü‚·B‚Ü‚½A’·’Jìˆê˜YŽ’˜u“V‘Ì
+    ‹O“¹˜_v‚É‚ ‚é Newcomb ‚Ì‰ü—Ç–@i…˜H•”‚ª 1980-1984 ”N”Å‚Ì“V‘ÌˆÊ’u•\‚ÉŽg—p
+    ‚µ‚Ä‚¢‚½‚à‚Ìj‚ð‘·Œå‹ó‚Æ‚j‚…‚Ž‚”‚ª‚»‚ê‚¼‚ê C ‚Æ FORTRAN77 ‚ÅƒIƒŠƒWƒiƒ‹‚Éƒv
+    ƒƒOƒ‰ƒ€‚µ‚½‚à‚Ì‚ªAPC-VAN ‚Ì SIGA‚r‚o‚`‚b‚di“V•¶E‰F’ˆj‚Ì‚r‚j‚xE‚k‚`‚a
+    ‚Æƒ‰ƒCƒuƒ‰ƒŠ‚É‹Ÿ‹‹‚³‚ê‚Ä‚¢‚é‚Ì‚Å‚²—˜—p‰º‚³‚¢B
+
+    @‚È‚¨A‘¾—zÀ•W‚ÉŠÖ‚·‚éV“V‘Ì—ï‚Å‚ÌŽå—v‚È•ÏX‰ÓŠ‚ÍŽŸ‚Ì’Ê‚è‚Å‚·B
+    @@@EIAU1976 “V•¶’è”Œn‚ÌÌ—p
+    @@@E‘¾—z‚ÌŽ‹ÔˆÜEŽ‹ÔŒo‚ÍŒõs·‚ð•â³‚·‚é
+    @@@Et•ª“_‚Ì•ÏX
+    @@@EŽžŒn‚Í ET ‚©‚ç TD ‚Ö
+    @@@EB1950.0 •ª“_‚©‚ç J2000.0 •ª“_‚Ö
+    @‚½‚¾‚µAœa¯E¬˜f¯‚É‚Â‚¢‚Ä‚ÍA1992 ”N‚Ü‚Å‚ÌŠÔ‚Í B1950.0 •ª“_‚ðŽg—p‚µ‚Ü
+    ‚·B
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 21 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+________________________________________________________________________________
+
+y•t˜^ B: ŠÂ‹«Ý’è‚É‚Â‚¢‚Äz
+________________________________________________________________________________
+
+    a)@ŠÂ‹«Ý’èƒtƒ@ƒCƒ‹
+        @ŠÂ‹«Ý’èƒtƒ@ƒCƒ‹‚Í’ÊíƒJƒŒƒ“ƒgƒfƒBƒŒƒNƒgƒŠ‚Éì‚ç‚êA‹N“®Žž‚É‚àƒJƒŒƒ“
+        ƒgƒfƒBƒŒƒNƒgƒŠ‚ð‚Ü‚¸’T‚·‚æ‚¤‚É‚È‚Á‚Ä‚¢‚Ü‚·B
+        @‚µ‚©‚µAŠÂ‹«•Ï” EPH ‚ÉƒfƒBƒŒƒNƒgƒŠ–¼‚ªƒZƒbƒg‚³‚ê‚Ä‚¢‚é‚ÆA‚Ü‚¸‚»‚Ìƒf
+        ƒBƒŒƒNƒgƒŠ‚Ì’†‚Å EPH.SYS ‚ð’T‚µ‚Ü‚·B
+        @‚±‚Ìê‡‚É‚àŽ¸”s‚·‚é‚ÆƒJƒŒƒ“ƒgƒfƒBƒŒƒNƒgƒŠ‚ð’T‚µ‚Ü‚·B‚¢‚¸‚ê‚ÌŒŸõ‚É
+        ‚àŽ¸”s‚µ‚½ê‡‚É‚Í‚·‚×‚ÄƒfƒtƒHƒ‹ƒg‚ÌÝ’è‚ªs‚í‚ê‚Ü‚·B
+
+        @‹N“®ƒIƒvƒVƒ‡ƒ“‚Ì‰ðÍ‚Í‚»‚ê‚ç‚ÌŒã‚És‚í‚ê‚Ü‚·B
+
+        @‚Ü‚½AI—¹Žž‚Ì•Û‘¶‚Í“Ç‚Ýž‚Ý‚ðs‚Á‚½ƒtƒ@ƒCƒ‹‚É‘Î‚µ‚Äs‚í‚ê‚Ü‚·B
+        @‚È‚¨AˆÙ‚È‚éƒo[ƒWƒ‡ƒ“‚Ì EPH ‚Åì¬‚µ‚½ EPH.SYS ‚ðŽg‚¤‚Æ‰ŠúÝ’è’l“™
+        ‚ª‚¨‚©‚µ‚­‚È‚è‚Ü‚·‚Ì‚ÅA•K‚¸íœ‚µ‚½Œã‹N“®‚µ‚Ä‰º‚³‚¢B‚±‚ÌŽž‚»‚ê‚Ü‚Å‚Ì
+        Ý’è’l‚Í‚·‚×‚ÄŽ¸‚í‚ê‚Ü‚·B‹N“®ŒãÄÝ’è‚µ‚Ä‰º‚³‚¢B
+
+        i)@ƒtƒ@ƒCƒ‹–¼
+            ŠÂ‹«Ý’èƒtƒ@ƒCƒ‹‚Ì–¼‘O‚Í EPH.SYS ‚ÉŒÅ’è‚³‚ê‚Ä‚¢‚Ü‚·B
+
+        ii)@•Û‘¶‚³‚ê‚é€–Ú
+                @ŠÂ‹«Ý’èƒtƒ@ƒCƒ‹‚É•Û‘¶‚³‚ê‚éŠÂ‹«‚ÍŽŸ‚Ì‚à‚Ì‚Å‚·B
+
+                1)  System control ‚ÅƒZƒbƒg‚·‚é€–Ú
+                2)  Ephemeris:      Output Item/device ‚ÌƒXƒCƒbƒ`ŒQ
+                3)     "            Date/Step
+                4)     "            Location
+                5)  Identification: Range
+                6)     "            Date
+                7)     "            Location
+                8)     "            Output device ‚ÌƒXƒCƒbƒ`ŒQ
+
+    b)@ŠÂ‹«•Ï”(DOS)
+        i)@EPH : ŠÂ‹«Ý’èƒtƒ@ƒCƒ‹‚ð‚¨‚­ƒfƒBƒŒƒNƒgƒŠ–¼‚ÌŽw’è
+            @ŠÂ‹«•Ï” EPH ‚É‚ÍŠÂ‹«Ý’èƒtƒ@ƒCƒ‹‚ð‚¨‚­ƒfƒBƒŒƒNƒgƒŠ–¼‚ðƒZƒbƒg‚·‚é
+            ‚±‚Æ‚ª‚Å‚«‚Ü‚·B
+            @UNIX ‚Å‚Í‚±‚Ì•Ï”‚ÉŠÖŒW‚È‚­ƒz[ƒ€ƒfƒBƒŒƒNƒgƒŠ‚Éì¬‚³‚ê‚Ü‚·B
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 22 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+________________________________________________________________________________
+
+y•t˜^ C: ’ˆÓŽ–€z
+________________________________________________________________________________
+
+
+    @‚±‚±‚Å‚Í EPH Žg—pŽž‚É’ˆÓ‚µ‚Ä‚¢‚½‚¾‚«‚½‚¢‚±‚Æ‚ð‚Ü‚Æ‚ß‚Ä‚Ý‚Ü‚·B
+
+    ž@ŒvŽZ¸“x‚É‚Â‚¢‚Ä
+        @ˆÊ’u„ŽZƒƒjƒ…[‚Å‚ÍA“à•”‚Å—p‚¢‚é‘¾—zÀ•W‚Ì¸“x‚ð•Ï‚¦‚é‚±‚Æ‚Åo—Í‚Ì
+        ¸“x‚ðŒˆ‚ß‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B
+        @Standard ‚Å‚Í‘¾—zÀ•W‚É Newcomb –@‚Ì‰ü—Ç”Å‚ð—p‚¢‚Ä‚¢‚Ü‚·‚Ì‚ÅA7 Œ…¸
+        “x‚ÅA 0.1" ‚Ì¸‘ªˆÊ’uƒŒƒxƒ‹‚Ü‚ÅŒvŽZ‚·‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B‚µ‚©‚µA“Á‚É 8
+        087 Œn‚Ì”’l‰‰ŽZƒvƒƒZƒbƒT‚ð•t‚¯‚Ä‚¢‚È‚¢‹@Ží‚Å‚ÍŒvŽZŽžŠÔ‚ª‚©‚È‚è‚©‚©‚è
+        ‚Ü‚·B
+        @‚»‚±‚Å¸“x‚æ‚èƒXƒs[ƒh‚ðdŽ‹‚µ‚½‚¢ê‡‚É‚ÍASimple ‚Ì•û‚ÉÝ’è‚·‚é‚Æ 
+        4 Œ…¸“x‚ÌŠÈˆÕ‘¾—zÀ•WŒvŽZ‚ðŽg—p‚µ‚Ü‚·‚Ì‚ÅƒXƒs[ƒh‚ª‘Š“–‘¬‚­‚È‚è‚Ü‚·B
+        ‚½‚¾‚µA Simple ‚Ìê‡‚ÍˆÊ’u‚ÌŒë·‚ªŠp“x‚É‚µ‚Ä’Êí 0.1' ˆÊ‚ ‚è‚Ü‚·B’n
+        ‹…‚ÉÚ‹ß‚·‚éœa¯‚â“ÁˆÙ¬˜f¯‚Å‚ÍŠp“x‚É‚µ‚Ä”10' ‚ÌŒë·‚ª‚Å‚é‚±‚Æ‚à‚ ‚è
+        ‚Ü‚·B‚±‚¤‚¢‚Á‚½ê‡‚Í Standard ‚Ì•û‚ðŽg—p‚µ‚Ä‰º‚³‚¢B‚µ‚©‚µ”’l‰‰ŽZƒv
+        ƒƒZƒbƒT‚ª•t‚¢‚Ä‚¢‚È‚¢ƒ}ƒVƒ“‚Ìê‡‚ÅA 0.1' ˆÊ‚Ì¸“x‚Å\•ª‚ÈŽž‚Í’Êí‚Í
+         4 Œ…¸“x‚ÅŽg—p‚·‚é•û‚ª‰õ“K‚©‚à’m‚ê‚Ü‚¹‚ñBƒ}ƒVƒ“‚ÌŒvŽZ‘¬“x‚âŽg—p–Ú“I‚É
+        ‰ž‚¶‚ÄŽg‚¢•ª‚¯‰º‚³‚¢B
+        @‚È‚¨AV‚µ‚¢”’lÏ•ª–@‚É‚æ‚é‘¾—zÀ•W‚Æ‚ÌŠÖŒW‚Íu‘¾—zÀ•W‚É‚Â‚¢‚Äv‚ð
+        ‚²——‰º‚³‚¢B
+
+    ž@date ‚Å‚ÌÔŒoEÔˆÜ‚É‚Â‚¢‚Ä
+        @ˆÊ’u„ŽZ‚Ìo—Í‚É‚¨‚¢‚Ä•ª“_‚ð date ‚ÉÝ’è‚·‚é‚ÆAˆÊ’u„ŽZ“ú‚Ì•ª“_‚É‚¨
+        ‚¯‚éÔŒoEÔˆÜ‚ðo—Í‚µ‚Ü‚·B
+        @‚½‚¾‚µAÎ·‚É‚æ‚é•â³‚ð‚µ‚Ä‚¢‚é‚Ì‚Ý‚ÅÍ“®“™‚Ì’l‚Í•â³‚µ‚Ä‚ ‚è‚Ü‚¹‚ñB
+        ‚¢‚í‚ä‚éŽ‹ˆÊ’u (App.) ‚Æ”ä‚×‚é‚ÆŠp“x‚É‚µ‚Ä 0.1' ˆÊ‚ÌŒë·‚ª‚ ‚é‚±‚Æ‚ª‚ 
+        ‚è‚Ü‚·B
+
+    ž@¬˜f¯‚ÌŽÀŽ‹Œõ“x (V)AŽÊ^Œõ“x (B) ‚É‚Â‚¢‚Ä
+        @¬˜f¯‚ÌŒõ“x—\•ñ’l‚Í 1985 ”N‚Ì IAU ‘‰ï‚Å‚ÌŽæ‚èŒˆ‚ß‚É‚µ‚½‚ª‚Á‚ÄAŽÀŽ‹
+        Œõ“x‚Å•\‚·‚±‚Æ‚É‚È‚èŒõ“xŽ®‚àŒXŽÎˆöŽq‚ª•t‚­‚È‚Ç‰ü’ù‚³‚ê‚Ü‚µ‚½B
+        @EPH ‚Å‚Í‚±‚ÌV‚µ‚¢ŽÀŽ‹Œõ“x‚ðƒTƒ|[ƒg‚µ‚Ä‚¨‚èA’Êí‚Í V ‚ª•\Ž¦‚³‚ê‚Ü‚·B
+        ‚µ‚©‚µAˆÈ‘O‚ÌŒõ“xŽ®‚Æ‚ÌŒÝŠ·«‚ðl‚¦‚ÄA‹O“¹—v‘f‚ÌŒXŽÎˆöŽq (G) ‚ð 0.0 
+        ‚É‚µ‚½ê‡‚ÍˆÈ‘O‚ÌŒõ“xŽ®‚ÅŒvŽZ‚·‚é‚æ‚¤‚É‚È‚Á‚Ä‚¢‚Ü‚·BˆÈ‘O‚ÌŽÊ^Œõ“x‚Å
+        ŒvŽZ‚µ‚½‚¢Žž‚É‚¨Žg‚¢‰º‚³‚¢B‚±‚ÌŽž‚Í B ‚ª•\Ž¦‚³‚ê‚Ü‚·B
+        @‚È‚¨AV‚µ‚¢â‘ÎŒõ“x H ‚ÆˆÈ‘O‚ÌŽÊ^Œõ“x B ‚ÌŠÔ‚É‚Í‚¨‚¨‚æ‚»ŽŸ‚Ì‚æ‚¤‚È
+        ŠÖŒW‚ª‚ ‚è‚Ü‚·B
+
+                            H = B(1,0)-1.0
+
+
+    ž@ŒŽ‚Æ‚ÌŠp‹——£‚ÆŒŽ—î‚É‚Â‚¢‚Ä
+        @ŒŽ—î‚ÍŠÈˆÕŒvŽZ‚È‚Ì‚ÅÅ‘å‚Å 0.5 ‚­‚ç‚¢‚ÌŒë·‚ª‚ ‚é‚©‚à‚µ‚ê‚Ü‚¹‚ñB
+
+    ž@Variation ‚ÌŒvŽZ•û–@‚É‚Â‚¢‚Ä
+        @œa¯‚Ì‹ß“ú“_’Ê‰ßŽž‚Ü‚½‚Í¬˜f¯‚Ì•½‹Ï‹ß“_—£Šp‚ª‚¸‚ê‚½ê‡‚Ì•â³’l‚ð
+        o—Í‚µ‚Ü‚·B
+        @œa¯‚Ìê‡‚Í T=+1day ‚ª¬˜f¯‚Ìê‡‚Í M=+1deg. ‚Ì’l‚ª•\Ž¦‚³‚ê‚Ü‚·B
+        @‹O“¹Œë·‚â”ñd—ÍŒø‰Ê‚Ì‰e‹¿‚©‚ç‚PŒö“]‚²‚Æ‚É“Á‚É‹ß“ú“_’Ê‰ßŽž‚ÌŒë·‚ª
+        ‘å‚«‚­‚È‚é‚Ì‚Å‚·‚ªA‹O“¹‚Ì‚æ‚­Œˆ’è‚µ‚Ä‚¢‚é’ZŽüŠúœa¯‚Å‚Í•’Ê‚±‚Ì’l‚Í‚P
+        “úˆÈ‰º‚Å‚·B
+
+
+                                      - 23 -                                     
+
+
+
+
+Documentation                                                        EPH ver1.20
+
+
+        @‚»‚±‚ÅA’ÊíAˆÊ’u„ŽZ•\‚Å‚ÍƒoƒŠƒG[ƒVƒ‡ƒ“‚ð‘O‚Ì“úŽž‚Ì’l‚Æ‚Ì·‚©‚çŒv
+        ŽZ‚µ‚Ä‚¢‚Ü‚·B‚µ‚©‚µAŽüŠú‚ª’·‚¢œa¯‚Ìê‡‚ÍA‹ß“ú“_’Ê‰ßŽž‚ÌŒë·‚ª‚©
+        ‚È‚è‘å‚«‚¢‚©‚à’m‚ê‚Ü‚¹‚ñB
+        @‚±‚Ì‚æ‚¤‚Èê‡A“®‚«‚ª‘å‚«‚¢‚Æ‘Oq‚ÌŒvŽZ•û–@‚Å‚ÍŒë·‚ª‘å‚«‚­‚È‚Á‚Ä‚µ
+        ‚Ü‚¢‚Ü‚·B]‚Á‚ÄA EPH ‚Å‚Í³Šm‚É T=+1day ‚© M=+1deg. ‚Ì’l‚ðo—Í‚·‚é‚æ
+        ‚¤‚É‚µ‚Ä‚¢‚Ü‚·B
+
+    ž@ƒƒgƒJ[ƒt–@ŒW”‚ÌŒvŽZ•û–@‚É‚Â‚¢‚Ä
+        @“®‚«‚Ì‘¬‚¢œa¯‚â¬˜f¯‚ðŽÊ^‚ÉŽÊ‚·ê‡AƒƒgƒJ[ƒt–@‚ª‚æ‚­Žg—p‚³‚ê‚Ü
+        ‚·B
+        @EPH ‚Å‚ÍƒƒgƒJ[ƒt–@Žg—pŽž‚É•K—v‚Æ‚È‚éƒKƒCƒhŽžŠÔi•bj‚ÆˆÚ“®•ûŒüi“Œ
+        ¼•ûŒü‚ª 0 “xj‚ðŒvŽZ‚Å‚«‚Ü‚·Bo—Í’l‚Í +1 ŽžŠÔŒã‚ÌˆÊ’u‚Æ‚Ì·‚ðŠî‚ÉŒvŽZ
+        ‚µ‚Ä‚¢‚Ü‚·‚Ì‚ÅAMot./PA ‚Ì’l‚Æ‚Í­‚µˆÙ‚È‚é‚©‚à’m‚ê‚Ü‚¹‚ñB‚±‚ê‚ÍA“®‚«
+        ‚Ì‘¬‚¢“V‘Ì‚Ìê‡‚ÍAŠÔŠu‚Ì’·‚¢ˆÊ’u„ŽZ•\‚Ì·‚©‚çŒvŽZ‚·‚é Mot./PA ‚Å‚Í“–
+        “ú‚Ì³Šm‚È’l‚ªo—Í‚Å‚«‚È‚­‚È‚é‚½‚ß‚Å‚·B
+        @o—Í’l M ‚ÍƒƒgƒJ[ƒt–@‚ÅƒKƒCƒh‹¾‚Ì 1 –Ú· j “x‚ðƒKƒCƒh‚·‚éŽžŠÔi•bj
+        ‚ÅA
+
+                    M = j / s * p
+
+                                j FƒKƒCƒh‹¾‚P–Ú·‚ÌŠp“x (deg.)
+                                s F“V‘Ì‚ª‚P•bŠÔ‚É“V‹…ã‚Å“®‚­Šp“x (deg.)
+                                p FŽg—p‚·‚é–]‰“‹¾—p‚ÌŒW”
+
+        ‚Æ‚È‚è‚Ü‚·B
+        @‚±‚ÌƒvƒƒOƒ‰ƒ€‚Å‚Í j=0.00100 ‚ÅŒvŽZ‚³‚ê‚Ü‚·B
+        @‚Ü‚½ p ‚Ì’l‚ÍŽ©•ª‚Ì–]‰“‹¾‚ÅŽg‚¤’l‚ð System Control ƒƒjƒ…[‚ÅÝ’è‚·‚é
+        ‚±‚Æ‚ª‚Å‚«‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Å‚Í p = 1.00000 ‚Å‚·B
+
+    ž@œa¯i¬˜f¯j‚©‚ç‚Ý‚½‘¾—z–ÊŒoˆÜ“x‚É‚Â‚¢‚Ä
+        @œa¯‚©‚ç‚Ý‚½‘¾—z’†S‚ÌŒo“x‚ÆˆÜ“x‚ð•\Ž¦‚µ‚Ü‚·Bœa¯‚ÌŒõ“x•Ï‰»‚Æ‘¾—zŠˆ
+        “®‚ÍÌ‚©‚çŠÖŒW‚ª‚ ‚é‚Æ‚¢‚í‚êA‚Ü‚½‘¾—z‚Ì‹É‚ð’Ê‚éœa¯‚ÍŒõ“x•Ï‰»‚ð‚·‚é‚Æ
+        ‚¢‚í‚ê‚Ä‚¢‚Ü‚·‚ªA‚Í‚Á‚«‚è‚Æ‚µ‚½‚±‚Æ‚Í—Ç‚­‚í‚©‚Á‚Ä‚¢‚Ü‚¹‚ñB
+        @‘¾—zŠˆ“®‚ªŠˆ”­‚É‚È‚Á‚Ä‚«‚Ä‚¢‚é‚¨‚èA•“_‚âƒtƒŒƒA‚Æ‚ÌŠÖŒW“™‚Ì’²¸‚É‚¨
+        Žg‚¢‰º‚³‚¢B
+
+    ž@’n‹…‚Æœa¯‚Ì”ö‚Ì‚È‚·Šp‚É‚Â‚¢‚Ä
+        @ŠÏ‘ª’ni’n‹…j‚Æœa¯‚Ì‹O“¹•½–Ê‚Ì‚È‚·Šp‚ðo—Í‚µ‚Ü‚·Bœa¯‚Ì”ö‚ð‚Ç‚Ì‚æ
+        ‚¤‚ÈŠp“x‚©‚çŒ©‚Ä‚¢‚é‚©‚ª‚í‚©‚è‚Ü‚·B
+        @ŒvŽZŽ®‚Í˜@”ö—²ˆêŽ‚ªœa¯‰Ä‚ÌŠwZ‚Å”­•\‚³‚ê‚½‚à‚Ì‚Å‚·B
+        @’l‚ª 0 “x‚É‚È‚Á‚½Žž‚ÍƒAƒ“ƒ`ƒeƒCƒ‹oŒ»‚Ì‰Â”\«‚ª‚ ‚è‚Ü‚·B
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 24 -                                     
+
+
+
+
+                                                                              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------
+@‚d‚o‚g Version 1.20 
+@ƒ†[ƒU[ƒYEƒ}ƒjƒ…ƒAƒ‹
+--------------------------------------------------------------------------
+    (C)opyright 1988-1991
+       Apr. 1, 1991
+       by  @’·“c@Œ’‘¾˜Y / ‚j‚…‚Ž‚” / Kentaro Osada
+             ŽRª@Œå     / ‘·Œå‹ó   / Satoru Yamane
+--------------------------------------------------------------------------
+
+
+
+
+                                                                              
+
+
+
+
+                                                                         INDEX
+
+
+
+
+
+                                |@–Ú@ŽŸ@|
+
+
+
+    y‚Í‚¶‚ß‚Éz ....................................................    1
+
+    y•K—v‚È‹@Þz ..................................................    2
+
+    y—ªŒê‚É‚Â‚¢‚Äz ................................................    2
+
+    yPC-9801 ˆÈŠO‚Ì‹@Ží‚Å‚ÌŽg—p --- ‰æ–Ê§Œä(termcap)‚É‚Â‚¢‚Äz ....    3
+
+    yƒƒjƒ…[‚É‚Â‚¢‚Äz ............................................    5
+
+    y“ü—ÍƒtƒB[ƒ‹ƒh•ÒW‚É‚Â‚¢‚Äz ..................................    9
+
+    yƒtƒ@ƒCƒ‹‚©‚ç‚ÌŒŸõðŒ‚ÌÝ’è•û–@‚É‚Â‚¢‚Äz ....................    9
+
+    yŽæ‚èˆµ‚¤ƒf[ƒ^ƒtƒ@ƒCƒ‹‚ÌŒ`Ž®z ................................   12
+
+    y¡Œã‚ÌŠó–]z ..................................................   14
+
+    y‚±‚ê‚Ü‚Å‚Ìƒo[ƒWƒ‡ƒ“—š—ð‚ÆŽå‚È•ÏX“_z ........................   14
+
+    y”z•zðŒ‚¨‚æ‚ÑìŽÒ‚Ö‚Ì˜A—•û–@z ..............................   16
+
+    yŽÓŽ«z ........................................................   17
+
+    yŽQl•¶Œ£z ....................................................   17
+
+    y‚¨‚í‚è‚Éz ....................................................   19
+
+    y•t˜^ A: ‘¾—zÀ•W‚É‚Â‚¢‚Äz ....................................   20
+
+    y•t˜^ B: ŠÂ‹«Ý’è‚É‚Â‚¢‚Äz ....................................   22
+
+    y•t˜^ C: ’ˆÓŽ–€z ............................................   23
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                         INDEX
+
+

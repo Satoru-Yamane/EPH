@@ -1,0 +1,100 @@
+=======================
+ EPH --- Release Note
+=======================
+
+ver.1.4.3以降については、ベースディレクトリにある Historyファイル参照。
+
+* 2011/02/21	ver.1.4.2
+  + 編集画面での TABキーの扱いを、「カーソル以降をクリア」から「次の
+    フィールドに移動」に変更。「カーソル以降をクリア」機能には ctrl-K
+    を割り当てた。(M.Nishiyama)
+  + カラー対応端末への対応。(M.Nishiyama)
+    gmake ENABLE_COLOR=1 にてカラー対応版を makeできる。
+  + curses使用時、ESCDELAYのデフォルト値を 50msecにした。(M.Nishiyama)
+  + カラー対応版で、dim属性がサポートされていない端末での表示を PC-9801
+    版(BLUE表示)に合わせた。(S.Yamane & M.Nishiyama)
+
+* 2011/02/08	ver.1.4.1-p1
+  + 環境設定ファイルからの読み込みで、値に空白を持つものが正常に読め
+    ていなかった。(M.Nishiyama)
+  + 赤緯値の編集時に符号の処理が正しくできていなかった。(S.Yamane)
+  + 起動時オプションが不正だと coreを吐いていた。(S.Yamane)
+  + 起動時オプション -@ でバージョンが表示されていなかった。(S.Yamane)
+  + 環境設定ファイルが存在しなかった場合の出力場所をカレントディレク
+    トリから $HOMEにした。(S.Yamane)
+  + TT - UT conversion を Manual に設定して ΔT を入力するようにすると
+    E/Edit Current Date、R/Edit Date Range の日付表示がおかしくなる問
+    題に対応。(M.Nishiyama)
+  + lib/misc/time_sys.c で 1992 年以降、現在迄のΔTに対応するように修
+    正。(M.Nishiyama)
+  + lib/misc/time_sys.c の OS依存部を DOSと非DOSに単純化。(S.Yamane)
+  + date.id_ut_et の値が出力されず date.ut_et になっていた部分を修正。
+    (M.Nishiyama)
+  + カーソル非表示に対応できない端末に対応するために、terminfo interface
+    に対応。(M.Nishiyama)
+  + トップレベルの Makefileに install ターゲットを追加。また、DEBUG、
+    WITHOUT_CURSES などの定義をコマンドラインからも指定できるように
+    した。(M.Nishiyama)
+
+* 2011/02/05	ver.1.4.1
+  + 非DOS版での環境設定ファイルの読み込みの優先順位は、
+    1) --config オプションで指定されたファイル。
+    2) 環境変数 EPH が設定されていれば、そのディレクトリの下の .ephrc。
+    3) 環境変数 HOMEが設定されていれば、そのディレクトリの下の .ephrc。
+    4) 1)-3)のいずれも読めなければ、カレントディレクトリの .ephrc。
+    とした。
+  + コンパイル時の warningで string.hに関連する部分を修正。
+
+* 2011/02/05	ver.1.4.1-ALPHA1
+  + Makefileのファイル名変更	Special thanks to J.Sano
+    MacOS Xでは makefileと Makefileの区別がつかなくて正常に makeでき
+    なかったのを修正するため、Makefileを GNUmakefileという名前に変更
+    した。(MacOS Xの makeの実体は GNU make)
+    DOSでも同じことが起こると思われる。
+    この変更は MacOS X上ではパッチで修正するのが面倒なので、新たなバー
+    ジョン番号で対応することにする。
+  + ver.1.4.0-p3までの修正を含む。
+
+* 2011/02/03	ver.1.4.0-p3
+  + 環境設定ファイル(EPH.SYS)関連の仕様変更。(UNIX系のみ) (S.Yamane)
+    - バイナリ保存ではなく、テキストファイルとした。
+    - --config オプションを増設し、環境設定ファイルを指定できるように
+      した。
+    - デフォルトの環境設定ファイル名は ${HOME}/.ephrc とした。
+  + UNIX環境では SAE(DOS用プログラム)の呼び出しを使用できなくした。
+
+* 2011/02/01	ver.1.4.0-p2
+  + MacOS Xでのコンパイル用パッチ (テスト中)
+
+* 2011/02/01	ver.1.4.0-p1
+  + コンパイルは通るものの実行時にエラーとなっていた CentOS 5.3
+    でも正常に動作するよう修正し、パッチを公開。(S.Yamane)
+
+* 2011/01/29	ver.1.4.0	Special thanks to M.Nishiyama.
+  + ver.1.30aをベースに FreeBSDへの移植。 (M.Nishiyama)
+    - Makefile作成 & 各所への #if __FreeBSD__ 対応。 (M.Nishiyama)
+    - 時刻表示で xx:00:00が (xx-1):59:60 となるバグを fix。(S.Yamane)
+    - 端末によってはカーソルキーが使用できなかったバグを fix。(S.Yamane)
+  + curses対応!
+    - eph_curses.c作成 & 各所への #if WITH_CURSES 対応。 (M.Nishiyama)
+    - 即時キー入力対応 (S.Yamane)
+
+* 2008/01/14
+  + ver.1.30aのソースコードを
+        http://www.carina.gr.jp/~yamane/software/eph/
+    にて再配布。
+
+* 1992/11 あたり?	ver.1.30b
+  + 細々とバグfixを含めていじってはいたものの、公開には至らず。
+    その後、行方不明。
+
+* 1992/02/22?	ver.1.30a
+  + DOS版バイナリおよびソースコード公開 (K.Osada/S.Yamane)
+    PC-VAN / NIFTY-Serve / ASCII-Net/PCS
+
+* 1991/04/01	ver.1.20
+  + DOS版バイナリおよびソースコード公開 (K.Osada/S.Yamane)
+    PC-VAN / NIFTY-Serve / ASCII-Net/PCS
+  + termcap対応。
+
+それ以前の履歴と変更点は、同梱の eph_doc.txt参照。

@@ -1,0 +1,141 @@
+INSTALL                    EPH ver1.4.7
+
+　このアーカイブには EPH ver1.4.7 の C ソースコードおよび Makefile と
+ドキュメントが入っています。
+
+  Windows での Make にはPublic Domain Curses(pdcurs34.zip) が必要です。
+ 下記 URL よりダウンロードし、eph-147-src\pdcurses に解凍して下さい。
+    (cygwin では、ncurses をインストールしてください。)
+
+    http://sourceforge.net/projects/pdcurses/files/pdcurses/3.4/pdcurs34.zip/download
+
+  MPC の軌道要素ファイルのダウンロードに libfetch か curl を使用します。
+  libfetch を持たない環境では下記 URL より curl を入手し、インストールを
+  行って下さい。
+  このドキュメント執筆時の最新版は 7.24.0です。
+
+     http://curl.haxx.se/download/curl-7.24.0.tar.bz2
+     http://curl.haxx.se/download/curl-7.24.0.zip
+
+
+  Make は以下のようにして下さい。
+
+* DOS --- ver.1.4.3a4以降は未サポートとなりました。
+
+* Windows
+
+    curl-7.24.0.zip を展開し、展開したディレクトリで make を実行します。
+
+    eph のアーカイブを展開します。
+
+    出てきた pdcurses ディレクトリ に移動し、pdcurs34.zip を展開します。
+  展開して出来た win32 ディレクトリで make を実行します。
+
+    make はeph 本体のベースディレクトリで make コマンドを実行してください。
+  eph 本体のベースディレクトリ にある 各 Makefile を修正し、curl のディレ
+  クトリ設定(CURL_DIR)を上記 curl-7.24.0.zip を展開したディレクトリへの
+  相対パスで指定してください。
+  libcurl - MPCの軌道要素ダウンロード機能 を有効にするには make のオプション
+  で USE_CURL を指定してください。
+
+    実行ファイルは bin 内にできます。
+
+    各コンパイラでの Make の実際を以下に示します。
+
+    * Visual Studio
+        Visual Studio Tools を実行しコマンドプロンプトから標準添付の
+      nmake.exe を使用します。
+
+            curl-7.24.0.zip を展開する。
+            cd curl-7.24.0
+            nmake vc VC=vc10 RTLIBCFG=static
+              VC  は Visual studio のバージョンで以下
+                VC=vc10  Visual studio 2010
+                VC=vc9   Visual studio 2008
+                VC=vc8   Visual studio 2005
+                VC=vc6   VC6
+            eph-147-src.zip を展開する。
+            cd eph-147-src\pdcurses
+            pdcurs34.zip を展開する。
+            cd win32
+            nmake /F vcwin32.mak
+            cd ..\..\
+            vcwin32.mak の修正(CRUL_DIRの設定)
+            nmake USE_CURL=1 /F vcwin32.mak
+
+    * C++ Compiler 5.5
+        　標準添付の make.exe を使用します。bcc++5.5 では curl コマンドの
+        make に失敗します。libcurl.lib は作成されていますが asyn-ares.obj、
+        asyn-thread.obj の追加に失敗しています。eph 側の makefile でこれら
+        を直接 link しています。
+
+            curl-7.24.0.zip を展開する。
+            cd curl-7.24.0
+            make borland RTLIBCFG=static
+            eph-147-src.zip を展開する。
+            cd eph-147-src\pdcurses
+            pdcurs34.zip を展開する。
+            cd win32
+            make -f bccwin32.mak
+            cd ..\..\
+            bccwin32.mak の修正(CRUL_DIRの設定)
+            make -DUSE_CURL -f bccwin32.mak
+
+    * MinGW
+        　GNU Make を使用します。
+
+            curl-7.24.0.zip を展開する。
+            cd curl-7.24.0
+            make mingw32 RTLIBCFG=static
+            eph-147-src.zip を展開する。
+            cd eph-147-src\pdcurses
+            pdcurs34.zip を展開する。
+            cd win32
+            make -f mingwin32.mak
+            cd ..\..\
+            mingw32.mak の修正(CRUL_DIRの設定)
+            make USE_CURL=1 -f mingw32.mak
+
+    * Cygwin
+        　GNU Make を使用します。事前に ncurses をインストールしてください。
+          Cygwin 対応は、Windows 対応に際して中間的なものとして対応させたものです。
+          エミュレータということで実行速度も遅くなり、メリットはありません。
+          以上により、今後サポートの予定はありません。
+
+            unzip curl-7.24.0.zip
+            cd curl-7.24.0
+            make cygwin
+            make install
+            unzip eph-147-src.zip
+            cd eph-147-src
+            make USE_CURL=1 -f cygwin.mak
+
+    * その他
+        　分かりません。
+
+* UNIX
+    * FreeBSD
+      USE_FETCH=1 を付して gmake を実行してください。
+        gmake USE_FETCH=1; gmake install
+
+    * Linux
+      libcurl を インストールを導入後 gmake を実行してください。
+
+      libcurl は、ほとんどの distributionでパッケージがあるはずです。
+      libfetch、libcurl どちらも持たない場合は GNUmakefile の USE_CURL を
+      コメントアウトしてください。
+          (この場合、MPCの直接ダウンロード機能は使えなくなります。)
+
+    * MacOS X
+      Xcodeには libcurlが標準で含まれているようなので、make 一発です。
+        (Lion + Xcode 4.2.1にて make & 実行確認)
+        make ; make install
+
+    * その他
+      手元に環境がないので分かりません。
+
+何か疑問の点などありましたら作者までご連絡いただければ幸いです。
+
+美しさに欠けるソースコードですが、何かのお役にたてば幸いです。
+
+                    Feb. 22, 2012    S.Yamane / K.Osada / M.Nishiyama
