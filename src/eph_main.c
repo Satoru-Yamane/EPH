@@ -740,6 +740,7 @@ static int	ReadEnv(void)
 /*
  *	main routine
  */
+int
 main( argc, argv )
 int	argc;
 char	**argv;

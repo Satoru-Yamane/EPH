@@ -98,6 +98,7 @@ extern void	disp_sw( Select * );
 extern MenuFunc	eph_select( Select * );
 extern MenuFunc	get_fname( Fname * );
 extern MenuFunc	get_dname( Fname * );
+extern int capitalized_guide(int x, int y, char *msg);
 
 /* defined query.c */
 extern MenuFunc get_keystr(int);

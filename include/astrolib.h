@@ -139,6 +139,8 @@ extern double	time2day( int, int, int );
 extern int	day2time( double, int *, int *, int * );
 extern double	gst_date( double );
 extern double	lst_date( double );
+extern int	ut2et_init( void );
+extern int	ut2et_finish( void );
 extern double	ut2et( double );
 extern double	et2ut( double );
 extern double	time_convert( double );

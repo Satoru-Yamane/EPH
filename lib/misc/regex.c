@@ -236,7 +236,7 @@ static int obscure_syntax = 0;
    RE_NO_BK_PARENS and RE_NO_BK_VBAR.  */
 
 int
-re_set_syntax (syntax)
+re_set_syntax (int syntax)
 {
   int ret;
 

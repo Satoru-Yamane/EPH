@@ -10,7 +10,7 @@
 #include	<stdio.h>
 #include	<math.h>
 #include	<ctype.h>
-#if defined(_WIN32)
+#if defined(_WIN32) || __FreeBSD__
 #include	<string.h>
 #else
 #include	<strings.h>

@@ -320,7 +320,7 @@ static int fetch_mpc(char *URL)
     mvprintw(11,15,"%s Not found.", URL+i);
     mvprintw(12,15,"  Press any key to continue.");
     getch();
-    return;
+    return -1;
     }
 
   fp_out = fopen(URL+i, "wb");
